@@ -4,7 +4,8 @@
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "microphone": "*"
+        "microphone": "*",
+        "finch": "github:BirdBrainTechnologies/pxt-finch"
     },
     "files": [
         "main.blocks",
