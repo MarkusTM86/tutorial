@@ -1,5 +1,5 @@
 {
-    "name": "Tutorial",
+    "name": "Finch tutorials",
     "description": "",
     "dependencies": {
         "core": "*",
@@ -9,7 +9,9 @@
     "files": [
         "main.blocks",
         "main.ts",
-        "README.md"
+        "README.md",
+        "tutorialtest.md",
+        "tuttest.md"
     ],
     "testFiles": [
         "test.ts"
@@ -21,5 +23,5 @@
     "supportedTargets": [
         "microbit"
     ],
-    "preferredEditor": "blocksprj"
+    "preferredEditor": "tsprj"
 }
