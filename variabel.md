@@ -1,4 +1,3 @@
-````markdown
 # Variabler med Finch
 
 ```package
@@ -9,7 +8,7 @@ finch=github:BirdBrainTechnologies/pxt-finch
 
 I den här övningen ska du undersöka vad en [variabel](#word "En variabel är en plats i programmet där ett värde kan sparas och ändras.") är.
 
-Du börjar med att använda micro:biten utan robot. När du har förstått hur variabler fungerar är det dags att låta Finch använda en variabel för att bestämma hur snabbt den ska köra.
+Du börjar med att arbeta med micro:biten. När du har förstått hur variabler fungerar ska du använda en variabel för att styra hastigheten på Finch.
 
 ---
 
@@ -20,7 +19,7 @@ Efter övningen ska du kunna:
 - förklara vad en variabel är
 - skapa och ändra variabler
 - använda en variabel i ett program
-- använda en variabel för att styra hastigheten på Finch
+- använda en variabel för att styra Finch
 
 ---
 
@@ -30,7 +29,7 @@ Efter övningen ska du kunna:
 
 - [variabel](#word "En variabel är en plats i programmet där ett värde kan sparas och ändras.")
 - [värde](#word "Ett värde är information som sparas i en variabel.")
-- [händelse](#word "En händelse är något som startar kod, till exempel när en knapp trycks ned.")
+- [händelse](#word "En händelse är något som startar kod, till exempel när micro:biten skakas eller när en knapp trycks ned.")
 
 **Matematik**
 
@@ -46,9 +45,17 @@ Efter övningen ska du kunna:
 
 ---
 
-## Steg 1: Skapa din första variabel
+## Steg 1: Skapa en variabel
 
-Skapa en variabel som heter `steg`.
+Öppna kategorin `||variables:Variabler||`.
+
+Välj **Skapa en variabel...**
+
+Ge variabeln namnet **steg**.
+
+När du har skapat variabeln får den automatiskt startvärdet **0**.
+
+Programmet ska nu se ut så här.
 
 ```blocks
 let steg = 0
@@ -58,16 +65,23 @@ let steg = 0
 
 ## Testa @unplugged
 
-Läs programmet.
+Fundera.
 
 - Vad heter variabeln?
 - Vilket värde har den från början?
+- Varför kan det vara bra att spara ett värde i en variabel?
 
 ---
 
-## Steg 2: Visa variabeln
+## Steg 2: Visa variabelns värde
 
-Visa värdet på micro:bitens display.
+Öppna kategorin `||basic:Grundläggande||`.
+
+Välj blocket **visa siffra**.
+
+Öppna sedan `||variables:Variabler||` och dra in variabeln **steg** i blocket.
+
+Programmet ska se ut så här.
 
 ```blocks
 let steg = 0
@@ -78,20 +92,34 @@ basic.showNumber(steg)
 
 ## Testa
 
-Ladda programmet.
+Ladda programmet till micro:biten.
 
-Vad visas på displayen?
+Vilket tal visas?
+
+Varför visas just det talet?
 
 ---
 
-## Steg 3: Öka variabeln
+## Steg 3: Skaka micro:biten
 
-När du trycker på knapp A ska variabeln öka med 1.
+Nu ska du använda en ny händelse.
+
+Öppna kategorin `||input:Indata||`.
+
+Välj blocket **vid skakning**.
+
+Öppna sedan `||variables:Variabler||`.
+
+Välj blocket **ändra steg med 1**.
+
+Lägg till blocket **visa tal** från `||basic:Grundläggande||`.
+
+Programmet ska nu se ut så här.
 
 ```blocks
 let steg = 0
 
-input.onButtonPressed(Button.A, function () {
+input.onGesture(Gesture.Shake, function () {
     steg += 1
     basic.showNumber(steg)
 })
@@ -101,24 +129,35 @@ input.onButtonPressed(Button.A, function () {
 
 ## Testa
 
-Tryck flera gånger på knapp A.
+Skaka micro:biten flera gånger.
 
-Fundera:
+Fundera.
 
-- Vad händer med variabeln?
-- Hur vet du att värdet ändras?
+- Vad händer varje gång du skakar?
+- Hur förändras variabeln?
+- Vad visas på displayen?
 
 ---
 
 ## Steg 4: Skapa en ny variabel
 
-Nu ska du skapa en variabel som heter `hastighet`.
+Nu ska du skapa en ny variabel.
+
+Öppna `||variables:Variabler||`.
+
+Välj **Skapa en variabel...**
+
+Ge den namnet **hastighet**.
+
+Ge variabeln startvärdet **10**.
+
+Programmet ska nu se ut så här.
 
 ```blocks
 let hastighet = 10
 let steg = 0
 
-input.onButtonPressed(Button.A, function () {
+input.onGesture(Gesture.Shake, function () {
     steg += 1
     basic.showNumber(steg)
 })
@@ -130,24 +169,35 @@ input.onButtonPressed(Button.A, function () {
 
 Fundera.
 
-Varför kan det vara bra att spara hastigheten i en variabel istället för att skriva talet 10 överallt i programmet?
+- Vad används variabeln **steg** till?
+- Vad tror du att variabeln **hastighet** kommer att användas till?
 
 ---
 
 ## Steg 5: Visa hastigheten
 
-När du trycker på knapp B ska hastigheten visas.
+Öppna kategorin `||input:Indata||`.
+
+Lägg till blocket **när knapp A trycks**.
+
+Öppna `||basic:Grundläggande||`.
+
+Lägg in blocket **visa tal**.
+
+Öppna sedan `||variables:Variabler||` och välj variabeln **hastighet**.
+
+Programmet ska nu se ut så här.
 
 ```blocks
 let hastighet = 10
 let steg = 0
 
-input.onButtonPressed(Button.A, function () {
+input.onGesture(Gesture.Shake, function () {
     steg += 1
     basic.showNumber(steg)
 })
 
-input.onButtonPressed(Button.B, function () {
+input.onButtonPressed(Button.A, function () {
     basic.showNumber(hastighet)
 })
 ```
@@ -156,30 +206,40 @@ input.onButtonPressed(Button.B, function () {
 
 ## Testa
 
-Tryck på knapp B.
+Tryck på knapp A.
 
-Vilket värde visas?
+Vilket tal visas?
+
+Vad berättar talet?
 
 ---
 
 ## Steg 6: Ändra hastigheten
 
-När du trycker på A+B ska hastigheten öka med 10.
+Öppna kategorin `||input:Indata||`.
+
+Lägg till blocket **när knapp A trycks** om du inte redan gjort det.
+
+Öppna `||variables:Variabler||`.
+
+Välj blocket **ändra hastighet med 1**.
+
+Ändra värdet från **1** till **10**.
+
+Visa sedan hastigheten på displayen.
+
+Programmet ska nu se ut så här.
 
 ```blocks
 let hastighet = 10
 let steg = 0
 
-input.onButtonPressed(Button.A, function () {
+input.onGesture(Gesture.Shake, function () {
     steg += 1
     basic.showNumber(steg)
 })
 
-input.onButtonPressed(Button.B, function () {
-    basic.showNumber(hastighet)
-})
-
-input.onButtonPressed(Button.AB, function () {
+input.onButtonPressed(Button.A, function () {
     hastighet += 10
     basic.showNumber(hastighet)
 })
@@ -189,22 +249,20 @@ input.onButtonPressed(Button.AB, function () {
 
 ## Testa
 
-Tryck på A+B några gånger.
-
-Sedan trycker du på B.
+Tryck flera gånger på knapp A.
 
 Fundera.
 
-- Vad har förändrats?
-- Hur vet programmet vilket värde som ska visas?
+- Hur förändras hastigheten?
+- Vilket värde visas på displayen?
 
 ---
 
-## Steg 7: Nu är det dags att starta Finch
+## Steg 7: Nu är det dags att använda Finch
 
-Hittills har vi bara arbetat med micro:biten.
+Hittills har du bara arbetat med micro:biten.
 
-Nu ska roboten använda variabeln `hastighet`.
+Nu ska Finch använda variabeln **hastighet**.
 
 Lägg först till blocket som startar Finch.
 
@@ -212,50 +270,8 @@ Lägg först till blocket som startar Finch.
 let hastighet = 10
 
 finch.startFinch()
-```
 
----
-
-## Steg 8: Använd variabeln
-
-Nu får variabeln styra hur snabbt Finch kör.
-
-```blocks
-let hastighet = 10
-
-finch.startFinch()
-
-input.onButtonPressed(Button.B, function () {
-    finch.setMove(MoveDir.Forward, 20, hastighet)
-})
-```
-
----
-
-## Testa
-
-Tryck på knapp B.
-
-Hur snabbt kör Finch?
-
----
-
-## Steg 9: Ändra hastigheten och testa igen
-
-Öka hastigheten med A+B.
-
-Kör sedan Finch igen med knapp B.
-
-```blocks
-let hastighet = 10
-
-finch.startFinch()
-
-input.onButtonPressed(Button.B, function () {
-    finch.setMove(MoveDir.Forward, 20, hastighet)
-})
-
-input.onButtonPressed(Button.AB, function () {
+input.onButtonPressed(Button.A, function () {
     hastighet += 10
     basic.showNumber(hastighet)
 })
@@ -263,17 +279,54 @@ input.onButtonPressed(Button.AB, function () {
 
 ---
 
+## Testa @unplugged
+
+Programmet gör ännu ingenting med roboten.
+
+Varför tror du att Finch måste startas innan den kan köra?
+
+---
+
+## Steg 8: Låt variabeln styra Finch
+
+Öppna kategorin `||input:Indata||`.
+
+Lägg till blocket **när knapp B trycks**.
+
+Lägg sedan till Finch-blocket **setMove**.
+
+Använd variabeln **hastighet** som hastighet.
+
+Programmet ska nu se ut så här.
+
+```blocks
+let hastighet = 10
+
+finch.startFinch()
+
+input.onButtonPressed(Button.A, function () {
+    hastighet += 10
+    basic.showNumber(hastighet)
+})
+
+input.onButtonPressed(Button.B, function () {
+    finch.setMove(MoveDir.Forward, 20, hastighet)
+})
+```
+
+---
+
 ## Testa
 
-Kör roboten flera gånger.
-
-Öka hastigheten mellan varje körning.
+1. Tryck på knapp A tills displayen visar en hastighet du vill prova.
+2. Tryck på knapp B för att köra Finch.
+3. Prova flera olika hastigheter.
 
 Fundera.
 
-- Vad ändrades?
-- Behövde du skriva om blocket `setMove`?
-- Vad gjorde variabeln?
+- Kör Finch lika snabbt varje gång?
+- Vad är det som förändras?
+- Behövde du ändra blocket **setMove**?
 
 ---
 
@@ -293,9 +346,9 @@ Visa att du kan:
 Diskutera tillsammans.
 
 - Vad är en variabel?
-- Vad är skillnaden mellan variablerna `steg` och `hastighet`?
-- Varför är det smart att använda variabler i ett program?
-- Hur gjorde variabeln det lätt att ändra robotens hastighet?
+- Vad är skillnaden mellan variablerna **steg** och **hastighet**?
+- Varför är det smartare att använda en variabel än att skriva in ett nytt tal varje gång?
+- Hur hjälpte variabeln Finch att köra olika snabbt?
 
 ---
 
@@ -304,15 +357,14 @@ Diskutera tillsammans.
 Nu har du tränat på att:
 
 - skapa variabler
-- ändra variabelvärden
-- använda variabler i ett program
-- styra Finch med hjälp av en variabel
+- ändra variabler
+- använda en händelse som startar kod
+- använda en variabel för att styra en robot
 
 ---
 
 ## Bonus – Så här kan du utmana dig
 
-Skapa en ny knapp som minskar hastigheten med 10.
+Kan du skapa en knapp som minskar hastigheten med 10?
 
 Hur kan du se till att hastigheten aldrig blir mindre än 10?
-````
