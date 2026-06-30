@@ -12,7 +12,8 @@
         "main.ts",
         "README.md",
         "tuttest.md",
-        "tutbild.md"
+        "tutbild.md",
+        "variabel.md"
     ],
     "testFiles": [
         "test.ts"
