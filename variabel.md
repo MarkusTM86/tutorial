@@ -149,12 +149,12 @@ Välj **Skapa en variabel...**
 
 Ge den namnet **hastighet**.
 
-Ge variabeln startvärdet **10**.
+Ge variabeln startvärdet **0**.
 
 Programmet ska nu se ut så här.
 
 ```blocks
-let hastighet = 10
+let hastighet = 0
 let steg = 0
 
 input.onGesture(Gesture.Shake, function () {
@@ -189,7 +189,7 @@ Lägg in blocket **visa tal**.
 Programmet ska nu se ut så här.
 
 ```blocks
-let hastighet = 10
+let hastighet = 0
 let steg = 0
 
 input.onGesture(Gesture.Shake, function () {
@@ -231,7 +231,7 @@ Visa sedan hastigheten på displayen.
 Programmet ska nu se ut så här.
 
 ```blocks
-let hastighet = 10
+let hastighet = 0
 let steg = 0
 
 input.onGesture(Gesture.Shake, function () {
@@ -267,7 +267,7 @@ Nu ska Finch använda variabeln **hastighet**.
 Lägg först till blocket som startar Finch.
 
 ```blocks
-let hastighet = 10
+let hastighet = 0
 
 finch.startFinch()
 
@@ -293,14 +293,14 @@ Varför tror du att Finch måste startas innan den kan köra?
 
 Lägg till blocket **när knapp B trycks**.
 
-Lägg sedan till Finch-blocket **setMove**.
+Lägg sedan till Finch-blocket för att köra framåt i X cm. 
 
 Använd variabeln **hastighet** som hastighet.
 
 Programmet ska nu se ut så här.
 
 ```blocks
-let hastighet = 10
+let hastighet = 0
 
 finch.startFinch()
 
@@ -367,4 +367,4 @@ Nu har du tränat på att:
 
 Kan du skapa en knapp som minskar hastigheten med 10?
 
-Hur kan du se till att hastigheten aldrig blir mindre än 10?
+Hur kan du se till att hastigheten aldrig blir mindre än 0 eller större än 100?
