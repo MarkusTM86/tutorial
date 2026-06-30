@@ -30,10 +30,12 @@ Efter övningen ska du kunna:
 - [variabel](#word "En variabel är en plats i programmet där ett värde kan sparas och ändras.")
 - [värde](#word "Ett värde är information som sparas i en variabel.")
 - [händelse](#word "En händelse är något som startar kod, till exempel när micro:biten skakas eller när en knapp trycks ned.")
+- [villkor](#word "Ett villkor är en kontroll som gör att programmet kan välja vad som ska hända.")
 
 **Matematik**
 
 - [hastighet](#word "Hastighet beskriver hur snabbt något rör sig.")
+- [tid](#word "Tid beskriver hur länge något pågår.")
 
 ---
 
@@ -216,9 +218,7 @@ Vad berättar talet?
 
 ## Steg 6: Ändra hastigheten
 
-Öppna kategorin `||input:Indata||`.
-
-Lägg till blocket **när knapp A trycks** om du inte redan gjort det.
+Nu ska knapp A inte bara visa hastigheten. Den ska också öka hastigheten.
 
 Öppna `||variables:Variabler||`.
 
@@ -255,6 +255,7 @@ Fundera.
 
 - Hur förändras hastigheten?
 - Vilket värde visas på displayen?
+- Varför börjar hastigheten på 0?
 
 ---
 
@@ -287,15 +288,15 @@ Varför tror du att Finch måste startas innan den kan köra?
 
 ---
 
-## Steg 8: Låt variabeln styra Finch
+## Steg 8: Låt variabeln styra hjulen
 
 Öppna kategorin `||input:Indata||`.
 
 Lägg till blocket **när knapp B trycks**.
 
-Lägg sedan till Finch-blocket för att köra framåt i X cm. 
+Lägg sedan till Finch-blocket **startMotors**.
 
-Använd variabeln **hastighet** som hastighet.
+Använd variabeln **hastighet** som hastighet för båda hjulen.
 
 Programmet ska nu se ut så här.
 
@@ -310,7 +311,7 @@ input.onButtonPressed(Button.A, function () {
 })
 
 input.onButtonPressed(Button.B, function () {
-    finch.setMove(MoveDir.Forward, 20, hastighet)
+    finch.startMotors(hastighet, hastighet)
 })
 ```
 
@@ -319,14 +320,62 @@ input.onButtonPressed(Button.B, function () {
 ## Testa
 
 1. Tryck på knapp A tills displayen visar en hastighet du vill prova.
-2. Tryck på knapp B för att köra Finch.
-3. Prova flera olika hastigheter.
+2. Tryck på knapp B för att starta hjulen.
 
 Fundera.
 
-- Kör Finch lika snabbt varje gång?
-- Vad är det som förändras?
-- Behövde du ändra blocket **setMove**?
+- Vad händer om hastigheten är 0?
+- Vad händer om hastigheten är större än 0?
+- Varför är det viktigt att båda hjulen får samma hastighet?
+
+---
+
+## Steg 9: Kör under en bestämd tid
+
+Nu ska Finch bara köra en kort stund.
+
+Öppna `||basic:Grundläggande||`.
+
+Lägg till blocket **paus (ms)** efter att hjulen har startat.
+
+Sätt pausen till **2000 ms**.
+
+2000 ms betyder 2 sekunder.
+
+Lägg sedan till Finch-blocket **stopMotors**.
+
+Programmet ska nu se ut så här.
+
+```blocks
+let hastighet = 0
+
+finch.startFinch()
+
+input.onButtonPressed(Button.A, function () {
+    hastighet += 10
+    basic.showNumber(hastighet)
+})
+
+input.onButtonPressed(Button.B, function () {
+    finch.startMotors(hastighet, hastighet)
+    basic.pause(2000)
+    finch.stopMotors()
+})
+```
+
+---
+
+## Testa
+
+1. Tryck på knapp A för att välja hastighet.
+2. Tryck på knapp B.
+3. Titta på hur Finch kör och stannar.
+
+Fundera.
+
+- Kör Finch lika länge varje gång?
+- Vad är det som förändras när du trycker på A?
+- Vad är det som inte förändras?
 
 ---
 
@@ -338,6 +387,7 @@ Visa att du kan:
 - ändra värdet i en variabel
 - visa en variabel på displayen
 - använda en variabel för att styra Finch
+- köra Finch under en bestämd tid
 
 ---
 
@@ -349,6 +399,7 @@ Diskutera tillsammans.
 - Vad är skillnaden mellan variablerna **steg** och **hastighet**?
 - Varför är det smartare att använda en variabel än att skriva in ett nytt tal varje gång?
 - Hur hjälpte variabeln Finch att köra olika snabbt?
+- Varför kan det vara användbart att köra roboten under samma tid varje gång?
 
 ---
 
@@ -360,6 +411,7 @@ Nu har du tränat på att:
 - ändra variabler
 - använda en händelse som startar kod
 - använda en variabel för att styra en robot
+- styra robotens rörelse med hastighet och tid
 
 ---
 
@@ -373,11 +425,11 @@ Hur kan du se till att hastigheten aldrig blir mindre än 0 eller större än 10
 
 Tänk efter innan du fortsätter.
 
-~hint Behöver du en ledtråd?
-
 När du ändrar hastigheten behöver programmet kontrollera att värdet fortfarande är giltigt.
 
-Efter att du har ökat hastigheten kan du lägga till ett villkor.
+Du kan använda ett **om-villkor** från `||logic:Logik||`.
+
+Exempel när hastigheten ökar:
 
 ```blocks
 input.onButtonPressed(Button.A, function () {
@@ -389,6 +441,19 @@ input.onButtonPressed(Button.A, function () {
 })
 ```
 
-På samma sätt kan du kontrollera att hastigheten aldrig blir mindre än 0.
+Exempel när hastigheten minskar:
+
+```blocks
+input.onButtonPressed(Button.B, function () {
+    hastighet += -10
+    if (hastighet < 0) {
+        hastighet = 0
+    }
+    basic.showNumber(hastighet)
+})
+```
+
+På så sätt hålls hastigheten mellan **0 %** och **100 %**.
 
 hint~
+````
