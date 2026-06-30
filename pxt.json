@@ -13,7 +13,12 @@
         "README.md",
         "tuttest.md",
         "tutbild.md",
-        "variabel.md"
+        "variabel.md",
+        "hastighet.md",
+        "encoder.md",
+        "andelar.md",
+        "formler.md",
+    
     ],
     "testFiles": [
         "test.ts"
