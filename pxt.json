@@ -18,7 +18,6 @@
         "encoder.md",
         "andelar.md",
         "formler.md"
-    
     ],
     "testFiles": [
         "test.ts"
