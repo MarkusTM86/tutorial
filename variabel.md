@@ -368,3 +368,27 @@ Nu har du tränat på att:
 Kan du skapa en knapp som minskar hastigheten med 10?
 
 Hur kan du se till att hastigheten aldrig blir mindre än 0 eller större än 100?
+
+~hint Behöver du en ledtråd?
+
+Tänk efter innan du fortsätter.
+
+~hint Behöver du en ledtråd?
+
+När du ändrar hastigheten behöver programmet kontrollera att värdet fortfarande är giltigt.
+
+Efter att du har ökat hastigheten kan du lägga till ett villkor.
+
+```blocks
+input.onButtonPressed(Button.A, function () {
+    hastighet += 10
+    if (hastighet > 100) {
+        hastighet = 100
+    }
+    basic.showNumber(hastighet)
+})
+```
+
+På samma sätt kan du kontrollera att hastigheten aldrig blir mindre än 0.
+
+hint~
