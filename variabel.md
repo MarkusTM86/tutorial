@@ -342,7 +342,7 @@ Sätt pausen till **2000 ms**.
 
 2000 ms betyder 2 sekunder.
 
-Lägg sedan till Finch-blocket **stopMotors**.
+Lägg sedan till Finch-blocket **finch stop**.
 
 Programmet ska nu se ut så här.
 
