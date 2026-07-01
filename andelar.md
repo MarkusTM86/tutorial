@@ -2,6 +2,7 @@
 
 ```package
 finch=github:BirdBrainTechnologies/pxt-finch
+tutorial=github:MarkusTM86/tutorial
 ```
 
 ```template
@@ -184,7 +185,7 @@ del = 3
 Det betyder:
 
 
-3 / **4**
+3 / 4
 
 
 ----------
@@ -227,6 +228,16 @@ Varför inte?
 
 ----------
 
+## Rita en liten cirkel
+
+Lägg till specialblocket **rita liten cirkel** `||geometri||` Testa på ett papper/whiteboard.
+
+```blocks
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    basic.pause(200)
+    geometri.ritaLitenCirkel()
+})
+```
 ## Steg 3: Sväng en tårtbit
 
 En hel cirkel är **360 grader**.
@@ -286,13 +297,13 @@ Fundera:
 
 Nu ska Finch rita en linje ut från mitten.
 
-Lägg till blocket **kör framåt 10 cm**.
+Lägg till blocket **kör framåt 5 cm**.
 
 ```blocks
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     basic.pause(200)
     finch.setTurn(RLDir.Right, 360 / helhet, 10)
-    finch.setMove(MoveDir.Forward, 10, 10)
+    finch.setMove(MoveDir.Forward, 5, 10)
 })
 ```
 
