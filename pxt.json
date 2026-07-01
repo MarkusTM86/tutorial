@@ -17,7 +17,8 @@
         "hastighet.md",
         "encoder.md",
         "andelar.md",
-        "formler.md"
+        "formler.md",
+        "custom.ts"
     ],
     "testFiles": [
         "test.ts"
