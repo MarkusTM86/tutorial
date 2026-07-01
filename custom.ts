@@ -1,38 +1,51 @@
-/**
- * Geometri för Finch
- */
-
 //% color=#0fbc11 icon="\uf1b9" block="Geometri"
 namespace geometri {
 
     //% block="rita liten cirkel"
     export function ritaLitenCirkel() {
-        ritaCirkel(10, 10, 30)
-    }
+        let d = 0
+        let rotations = 0
 
-    //% block="rita stor cirkel"
-    export function ritaStorCirkel() {
-        ritaCirkel(20, 20, 30)
-    }
-
-    function ritaCirkel(radius: number, leftSpeed: number, rightSpeed: number) {
-
-        finch.setMove(MoveDir.Forward, radius, 20)
+        finch.setMove(MoveDir.Forward, 5, 20)
         finch.setTurn(RLDir.Left, 90, 50)
 
-        let d = 3.14159 * 10 * 360 / 180
-        let rotations = d / (5 * 3.14159)
+        d = 3.14159 * 10 * 360 / 180
+        rotations = d / (5 * 3.14159)
 
         finch.resetEncoders()
-        finch.startMotors(leftSpeed, rightSpeed)
+        finch.startMotors(0, 20)
 
-        while (Math.abs(finch.getEncoder(RLDir.Left) - finch.getEncoder(RLDir.Right)) < rotations * 1.08) {
+        while (Math.abs(finch.getEncoder(RLDir.Left) - finch.getEncoder(RLDir.Right)) < rotations) {
 
         }
 
         finch.stopMotors()
 
         finch.setTurn(RLDir.Right, 90, 50)
-        finch.setMove(MoveDir.Backward, radius, 20)
+        finch.setMove(MoveDir.Backward, 5, 20)
+    }
+
+    //% block="rita stor cirkel"
+    export function ritaStorCirkel() {
+        let d = 0
+        let rotations = 0
+
+        finch.setMove(MoveDir.Forward, 15.2, 20)
+        finch.setTurn(RLDir.Left, 90, 40)
+
+        d = 3.14159 * 10 * 360 / 180
+        rotations = d / (5 * 3.14159)
+
+        finch.resetEncoders()
+        finch.startMotors(20, 40)
+
+        while (Math.abs(finch.getEncoder(RLDir.Left) - finch.getEncoder(RLDir.Right)) < rotations + 0.0005) {
+
+        }
+
+        finch.stopMotors()
+
+        finch.setTurn(RLDir.Right, 90, 50)
+        finch.setMove(MoveDir.Backward, 15.2, 40)
     }
 }
