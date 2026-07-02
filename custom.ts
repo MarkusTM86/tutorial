@@ -1,6 +1,27 @@
-//% color=#0fbc11 icon="\uf1b9" block="Specialblock"
+enum KoordinatRiktning {
+    //% block="Ö"
+    Oster = 0,
+    //% block="N"
+    Norr = 1,
+    //% block="V"
+    Vaster = 2,
+    //% block="S"
+    Soder = 3
+}
+
+//% color="#0fbc11" icon="\uf1b9" block="Specialblock"
+//% groups=['Koordinater', 'Geometri', 'other']
 namespace specialblock {
 
+    // Håller reda på vilket väderstreck Finch pekar mot.
+    let riktning = KoordinatRiktning.Oster
+    let svangHastighet = 20
+
+    //==================================================
+    // GEOMETRI
+    //==================================================
+
+    //% group="Geometri"
     //% block="rita liten cirkel"
     export function ritaLitenCirkel() {
         let d = 0
@@ -25,6 +46,7 @@ namespace specialblock {
         finch.setMove(MoveDir.Backward, 5, 20)
     }
 
+    //% group="Geometri"
     //% block="rita stor cirkel"
     export function ritaStorCirkel() {
         let d = 0
@@ -47,5 +69,53 @@ namespace specialblock {
 
         finch.setTurn(RLDir.Right, 90, 50)
         finch.setMove(MoveDir.Backward, 15.2, 40)
+    }
+
+    //==================================================
+    // KOORDINATER
+    //==================================================
+
+    //% group="Koordinater"
+    //% block="nollställ riktning"
+    export function nollstallRiktning() {
+        riktning = KoordinatRiktning.Oster
+    }
+
+    //% group="Koordinater"
+    //% block="sväng vänster"
+    export function svangVanster() {
+        finch.setTurn(RLDir.Left, 90, svangHastighet)
+
+        if (riktning == KoordinatRiktning.Oster) {
+            riktning = KoordinatRiktning.Norr
+        } else if (riktning == KoordinatRiktning.Norr) {
+            riktning = KoordinatRiktning.Vaster
+        } else if (riktning == KoordinatRiktning.Vaster) {
+            riktning = KoordinatRiktning.Soder
+        } else {
+            riktning = KoordinatRiktning.Oster
+        }
+    }
+
+    //% group="Koordinater"
+    //% block="sväng höger"
+    export function svangHoger() {
+        finch.setTurn(RLDir.Right, 90, svangHastighet)
+
+        if (riktning == KoordinatRiktning.Oster) {
+            riktning = KoordinatRiktning.Soder
+        } else if (riktning == KoordinatRiktning.Soder) {
+            riktning = KoordinatRiktning.Vaster
+        } else if (riktning == KoordinatRiktning.Vaster) {
+            riktning = KoordinatRiktning.Norr
+        } else {
+            riktning = KoordinatRiktning.Oster
+        }
+    }
+
+    //% group="Koordinater"
+    //% block="pekar mot %riktning"
+    export function pekarMot(riktningAttJamfora: KoordinatRiktning): boolean {
+        return riktning == riktningAttJamfora
     }
 }
