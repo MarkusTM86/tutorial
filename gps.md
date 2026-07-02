@@ -1,304 +1,194 @@
 # Finch på koordinatplanet
 
-```package
+``` package
 finch=github:BirdBrainTechnologies/pxt-finch
-tutorial=github:MarkusTM86/tutorial
+specialblock=github:<DITT_GITHUB_KONTO>/<DITT_REPO>
+```
+
+``` template
+let x = 0
+let y = 0
+
+finch.startFinch()
+specialblock.pekaMotOster()
+
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    basic.showString("x:")
+    basic.showNumber(x)
+    basic.showString("y:")
+    basic.showNumber(y)
+})
 ```
 
 ## Kort introduktion
 
-I den här övningen ska du programmera Finch att köra på ett koordinatsystem.
-
-Roboten kommer att hålla reda på vilket väderstreck den pekar mot, men **du** ska själv hålla reda på koordinaterna med hjälp av variablerna **x** och **y**.
-
-Målet är att förstå hur programmering kan användas för att beskriva rörelser i ett koordinatsystem.
-
----
+I den här övningen ska du programmera Finch att köra på ett
+koordinatsystem. Roboten håller reda på vilket väderstreck den pekar mot
+med hjälp av `||specialblock:Specialblock||`. Du ska själv hålla reda på
+koordinaterna med variablerna **x** och **y**.
 
 ## Lärandemål
 
-Efter övningen ska du kunna:
-
-- använda variabler för att lagra koordinater
-- förstå hur ett koordinatsystem fungerar
-- använda villkor för att uppdatera en position
-- koppla robotens rörelser till matematik
-
----
+-   använda variabler för att lagra koordinater
+-   förstå hur koordinater förändras när roboten rör sig
+-   använda villkor för att uppdatera x och y
+-   koppla robotens rörelse till matematik
 
 ## Begrepp
 
-### Programmering
-
-- variabel
-- villkor
-- algoritm
-
-### Matematik
-
-- koordinatsystem
-- koordinat
-- x-axel
-- y-axel
-- väderstreck
-
----
+-   koordinatsystem
+-   koordinat
+-   x-axel
+-   y-axel
+-   variabel
+-   villkor
+-   väderstreck
 
 ## Material
 
-- Finch Robot 2.0
-- micro:bit
-- Rutat papper
-- Penna
+-   Finch Robot 2.0
+-   micro:bit
+-   Rutat papper
+-   Penna
 
----
+## Steg 1 -- Titta på startkoden
 
-## Steg 1 – Starta Finch
+Startkoden är redan förberedd. Tryck på loggan och kontrollera att
+displayen visar **x: 0** och **y: 0**.
 
-Starta Finch.
+## Steg 2 -- Kör framåt
 
-```blocks
-finch.startFinch()
-```
+Lägg till `||input:on button A pressed||`.
 
----
-
-## Steg 2 – Nollställ riktningen
-
-Roboten börjar med att peka mot öster.
-
-```blocks
-specialblock.pekaMotOster()
-```
-
----
-
-## Steg 3 – Skapa variabler
-
-Skapa två variabler.
-
-- x
-- y
-
-```blocks
-let x = 0
-let y = 0
-```
-
----
-
-## Steg 4 – Startposition
-
-Låt roboten börja i origo.
-
-```blocks
-x = 0
-y = 0
-```
-
----
-
-## Testa @unplugged
-
-Vilken koordinat har roboten nu?
-
----
-
-## Steg 5 – Kör framåt
-
-När knapp A trycks ska roboten köra ett steg framåt.
-
-```blocks
+``` blocks
 input.onButtonPressed(Button.A, function () {
-    finch.setMove(MoveDir.Forward, 10, 20)
+    finch.setMove(MoveDir.Forward, 5, 20)
 })
 ```
 
----
+## Testa
 
-## Steg 6 – Om roboten pekar mot öster
+Tryck på A en gång.
 
-Om roboten pekar mot öster ska x öka.
+Hur långt kör roboten?
 
-```blocks
+Vad visar loggan?
+
+## Steg 3 -- Uppdatera x när Finch pekar mot öster
+
+Använd `||logic:if||` tillsammans med `||specialblock:pekar mot||`.
+
+``` blocks
 input.onButtonPressed(Button.A, function () {
-    finch.setMove(MoveDir.Forward, 10, 20)
+    finch.setMove(MoveDir.Forward, 5, 20)
 
     if (specialblock.pekarMot(KoordinatRiktning.Oster)) {
-        x += 1
+        x += 5
     }
 })
 ```
 
----
-
 ## Testa
 
-Tryck på A tre gånger.
+Kör två steg.
 
-Vilket värde har x?
+Vad visar koordinaten nu?
 
-Vilket värde har y?
+## Steg 4 -- Sväng vänster
 
----
+Lägg till `||input:on button B pressed||`.
 
-## Steg 7 – Sväng vänster
-
-Knapp B ska svänga roboten.
-
-```blocks
+``` blocks
 input.onButtonPressed(Button.B, function () {
     specialblock.svangVanster()
 })
 ```
 
----
+## Steg 5 -- Uppdatera y när Finch pekar mot norr
 
-## Steg 8 – Om roboten pekar mot norr
-
-Nu ska y öka när roboten kör framåt.
-
-```blocks
+``` blocks
 input.onButtonPressed(Button.A, function () {
-    finch.setMove(MoveDir.Forward, 10, 20)
+    finch.setMove(MoveDir.Forward, 5, 20)
 
     if (specialblock.pekarMot(KoordinatRiktning.Oster)) {
-        x += 1
+        x += 5
     }
 
     if (specialblock.pekarMot(KoordinatRiktning.Norr)) {
-        y += 1
+        y += 5
     }
 })
 ```
-
----
 
 ## Testa
 
-Kör följande bana.
+Kör:
 
-- Framåt
-- Framåt
-- Sväng vänster
-- Framåt
-- Framåt
+-   A
+-   A
+-   B
+-   A
+-   A
 
-Vilken koordinat hamnar roboten på?
+Visa koordinaten med loggan.
 
----
+## Steg 6 -- Uppdatera x när Finch pekar mot väster
 
-## Steg 9 – Lägg till väster
-
-När roboten pekar mot väster ska x minska.
-
-```blocks
+``` blocks
 input.onButtonPressed(Button.A, function () {
-    finch.setMove(MoveDir.Forward, 10, 20)
+    finch.setMove(MoveDir.Forward, 5, 20)
 
     if (specialblock.pekarMot(KoordinatRiktning.Oster)) {
-        x += 1
+        x += 5
     }
 
     if (specialblock.pekarMot(KoordinatRiktning.Norr)) {
-        y += 1
+        y += 5
     }
 
     if (specialblock.pekarMot(KoordinatRiktning.Vaster)) {
-        x += -1
+        x += -5
     }
 })
 ```
 
----
+## Steg 7 -- Uppdatera y när Finch pekar mot söder
 
-## Steg 10 – Lägg till söder
-
-När roboten pekar mot söder ska y minska.
-
-```blocks
+``` blocks
 input.onButtonPressed(Button.A, function () {
-    finch.setMove(MoveDir.Forward, 10, 20)
+    finch.setMove(MoveDir.Forward, 5, 20)
 
     if (specialblock.pekarMot(KoordinatRiktning.Oster)) {
-        x += 1
+        x += 5
     }
 
     if (specialblock.pekarMot(KoordinatRiktning.Norr)) {
-        y += 1
+        y += 5
     }
 
     if (specialblock.pekarMot(KoordinatRiktning.Vaster)) {
-        x += -1
+        x += -5
     }
 
     if (specialblock.pekarMot(KoordinatRiktning.Soder)) {
-        y += -1
+        y += -5
     }
 })
 ```
 
----
-
-## Steg 11 – Visa koordinaterna
-
-Visa först x och sedan y.
-
-```blocks
-basic.showNumber(x)
-basic.pause(500)
-basic.showNumber(y)
-```
-
----
-
-## Testa
-
-Försök köra roboten till koordinaten
-
-**(3,2)**
-
-Kontrollera att variablerna visar rätt värden.
-
----
-
 ## Avslutande test
 
-Kan du köra roboten till
+Kör Finch till koordinaten **(15,10)**.
 
-- (2,1)
-- (4,0)
-- (1,3)
-
-Rita samtidigt robotens väg på ett koordinatpapper.
-
----
+Rita banan på ett koordinatpapper.
 
 ## Avslutande diskussion
 
-- Hur visste programmet vilket håll roboten pekade åt?
-- Varför behövde du själv uppdatera x och y?
-- Vad skulle hända om du glömde att ändra en variabel?
-- Kan flera olika vägar leda till samma koordinat?
+-   Varför ändrar vi koordinaterna med **5**?
+-   Hur vet programmet vilket väderstreck roboten pekar mot?
+-   Kan flera olika vägar leda till samma koordinat?
 
----
+## Bonus -- Så här kan du utmana dig
 
-## Uppföljning av lärandemålen
-
-Nu har du tränat på att:
-
-- använda variabler
-- använda villkor
-- beskriva en rörelse med koordinater
-- koppla programmering till matematik
-
----
-
-## Bonus – Så här kan du utmana dig
-
-Kan du programmera roboten att köra en kvadrat?
-
-Kan du köra till koordinaten (4,4) och tillbaka till (0,0)?
-
-Kan du låta en klasskamrat ge dig en koordinat som roboten ska hitta till?
-````
+Programmera Finch att köra till valfri koordinat som en klasskamrat
+väljer.
