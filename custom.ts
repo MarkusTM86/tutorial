@@ -1,5 +1,5 @@
 //% color=#0fbc11 icon="\uf1b9" block="Specialblock"
-namespace Specialblock {
+namespace specialblock {
 
     //% block="rita liten cirkel"
     export function ritaLitenCirkel() {
