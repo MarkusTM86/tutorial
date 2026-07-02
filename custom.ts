@@ -76,8 +76,8 @@ namespace specialblock {
     //==================================================
 
     //% group="Koordinater"
-    //% block="nollställ riktning"
-    export function nollstallRiktning() {
+    //% block="peka mot öster"
+    export function pekaMotOster() {
         riktning = KoordinatRiktning.Oster
     }
 
