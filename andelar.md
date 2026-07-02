@@ -259,7 +259,7 @@ Lägg till ett svängblock.
 ```blocks
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     basic.pause(200)
-    geometri.ritaLitenCirkel()
+    specialblock.ritaLitenCirkel()
     finch.setTurn(RLDir.Right, 360 / helhet, 10)
 })
 ```
@@ -303,7 +303,7 @@ Lägg till blocket **kör framåt 5 cm**.
 ```blocks
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     basic.pause(200)
-    geometri.ritaLitenCirkel()
+    specialblock.ritaLitenCirkel()
     finch.setTurn(RLDir.Right, 360 / helhet, 10)
     finch.setMove(MoveDir.Forward, 5, 10)
 })
@@ -328,7 +328,7 @@ Lägg till blocket **kör bakåt 5 cm**.
 ```blocks
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     basic.pause(200)
-    geometri.ritaLitenCirkel()
+    specialblock.ritaLitenCirkel()
     finch.setTurn(RLDir.Right, 360 / helhet, 10)
     finch.setMove(MoveDir.Forward, 5, 10)
     finch.setMove(MoveDir.Backward, 5, 10)
@@ -379,7 +379,7 @@ Loopen ska upprepas **del** gånger.
 ```blocks
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     basic.pause(200)
-    geometri.ritaLitenCirkel()
+    specialblock.ritaLitenCirkel()
     for (let index = 0; index < del; index++) {
         finch.setTurn(RLDir.Right, 360 / helhet, 10)
         finch.setMove(MoveDir.Forward, 5, 10)
