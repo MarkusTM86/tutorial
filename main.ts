@@ -3,6 +3,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     basic.showNumber(x)
     basic.showString("y:")
     basic.showNumber(y)
+    specialblock.korHem(x, y)
 })
 input.onButtonPressed(Button.A, function () {
     finch.setMove(MoveDir.Forward, 5, 20)

@@ -119,6 +119,7 @@ namespace specialblock {
         return riktning == riktningAttJamfora
     }
 
+    // Intern hjälpfunktion - visas inte som block
     function vridTillRiktning(nyRiktning: KoordinatRiktning) {
         while (riktning != nyRiktning) {
             svangVanster()
@@ -127,35 +128,29 @@ namespace specialblock {
 
     //% group="Koordinater"
     //% block="kör hem från x %x y %y"
+    //% x.defl=0
+    //% y.defl=0
     export function korHem(x: number, y: number) {
+
+        // Kör hem i x-led
         if (x > 0) {
             vridTillRiktning(KoordinatRiktning.Vaster)
-            for (let index = 0; index < x / 5; index++) {
-                finch.setMove(MoveDir.Forward, 5, 20)
-            }
-        }
-
-        if (x < 0) {
+            finch.setMove(MoveDir.Forward, x, 20)
+        } else if (x < 0) {
             vridTillRiktning(KoordinatRiktning.Oster)
-            for (let index = 0; index < Math.abs(x) / 5; index++) {
-                finch.setMove(MoveDir.Forward, 5, 20)
-            }
+            finch.setMove(MoveDir.Forward, Math.abs(x), 20)
         }
 
+        // Kör hem i y-led
         if (y > 0) {
             vridTillRiktning(KoordinatRiktning.Soder)
-            for (let index = 0; index < y / 5; index++) {
-                finch.setMove(MoveDir.Forward, 5, 20)
-            }
-        }
-
-        if (y < 0) {
+            finch.setMove(MoveDir.Forward, y, 20)
+        } else if (y < 0) {
             vridTillRiktning(KoordinatRiktning.Norr)
-            for (let index = 0; index < Math.abs(y) / 5; index++) {
-                finch.setMove(MoveDir.Forward, 5, 20)
-            }
+            finch.setMove(MoveDir.Forward, Math.abs(y), 20)
         }
 
-        riktning = KoordinatRiktning.Oster
+        // Avsluta med att peka mot öster
+        vridTillRiktning(KoordinatRiktning.Oster)
     }
 }
