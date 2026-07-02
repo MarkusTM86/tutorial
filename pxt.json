@@ -21,6 +21,7 @@
         "gps.md",
         "linje.md",
         "fjarrstyrd.md",
+        "former.md",
         "custom.ts"
     ],
     "testFiles": [
