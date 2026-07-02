@@ -2,7 +2,7 @@
 
 ``` package
 finch=github:BirdBrainTechnologies/pxt-finch
-specialblock=github:<DITT_GITHUB_KONTO>/<DITT_REPO>
+specialblock=github:MarkusTM86/tutorial
 ```
 
 ``` template
