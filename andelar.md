@@ -230,12 +230,12 @@ Varför inte?
 
 ## Rita en liten cirkel
 
-Lägg till specialblocket **rita liten cirkel** i `||geometri||` Testa på ett papper/whiteboard.
+Lägg till specialblocket **rita liten cirkel** i `||specialblock||` Testa på ett papper/whiteboard.
 
 ```blocks
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     basic.pause(200)
-    geometri.ritaLitenCirkel()
+    specialblock.ritaLitenCirkel()
 })
 ```
 ## Steg 3: Sväng en tårtbit
