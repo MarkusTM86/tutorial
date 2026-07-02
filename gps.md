@@ -68,7 +68,7 @@ finch.startFinch()
 Roboten börjar med att peka mot öster.
 
 ```blocks
-specialblock.nollstallRiktning()
+specialblock.pekaMotOster()
 ```
 
 ---
