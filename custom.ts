@@ -1,4 +1,4 @@
-//% color=#0fbc11 icon="\uf1b9" block="Geometri"
+//% color=#0fbc11 icon="\uf1b9" block="Specialblock"
 namespace Specialblock {
 
     //% block="rita liten cirkel"
