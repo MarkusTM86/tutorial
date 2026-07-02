@@ -118,4 +118,44 @@ namespace specialblock {
     export function pekarMot(riktningAttJamfora: KoordinatRiktning): boolean {
         return riktning == riktningAttJamfora
     }
+
+    function vridTillRiktning(nyRiktning: KoordinatRiktning) {
+        while (riktning != nyRiktning) {
+            svangVanster()
+        }
+    }
+
+    //% group="Koordinater"
+    //% block="kör hem från x %x y %y"
+    export function korHem(x: number, y: number) {
+        if (x > 0) {
+            vridTillRiktning(KoordinatRiktning.Vaster)
+            for (let index = 0; index < x / 5; index++) {
+                finch.setMove(MoveDir.Forward, 5, 20)
+            }
+        }
+
+        if (x < 0) {
+            vridTillRiktning(KoordinatRiktning.Oster)
+            for (let index = 0; index < Math.abs(x) / 5; index++) {
+                finch.setMove(MoveDir.Forward, 5, 20)
+            }
+        }
+
+        if (y > 0) {
+            vridTillRiktning(KoordinatRiktning.Soder)
+            for (let index = 0; index < y / 5; index++) {
+                finch.setMove(MoveDir.Forward, 5, 20)
+            }
+        }
+
+        if (y < 0) {
+            vridTillRiktning(KoordinatRiktning.Norr)
+            for (let index = 0; index < Math.abs(y) / 5; index++) {
+                finch.setMove(MoveDir.Forward, 5, 20)
+            }
+        }
+
+        riktning = KoordinatRiktning.Oster
+    }
 }
