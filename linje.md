@@ -3,7 +3,9 @@
 ```package
 finch=github:BirdBrainTechnologies/pxt-finch
 ```
-
+```template
+finch.startFinch()
+```
 ## Kort introduktion
 
 I den här övningen ska du programmera Finch att följa en svart linje med hjälp av sina [linjesensorer](#word "En linjesensor känner av skillnaden mellan ljusa och mörka underlag.").
