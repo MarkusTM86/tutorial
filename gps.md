@@ -48,10 +48,13 @@ koordinaterna med variablerna **x** och **y**.
 
 -   Finch Robot 2.0
 -   micro:bit
--   Rutat papper
+-   Ett koordinatsystem 
 -   Penna
 -   USB-sladd
 
+
+## Koordinatsystem @unplugged
+![Koordinatsystem](https://raw.githubusercontent.com/markustm86/tutorial/master/images/koordinatsystem.png)
 ## Steg 1 -- Titta på startkoden
 
 Startkoden är redan förberedd. Tryck på loggan och kontrollera att
