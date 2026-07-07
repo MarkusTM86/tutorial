@@ -281,3 +281,4 @@ Nu har du tränat på att:
 * Testa olika breda linjer.
 * Bygg en svårare bana med fler kurvor.
 * Kan du få Finch att följa linjen snabbare utan att tappa bort den?
+
