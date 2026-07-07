@@ -36,13 +36,13 @@ koordinaterna med variablerna **x** och **y**.
 
 ## Begrepp
 
--   koordinatsystem
--   koordinat
--   x-axel
--   y-axel
--   variabel
--   villkor
--   väderstreck
+- [koordinatsystem](#word "Ett koordinatsystem hjälper oss att beskriva en plats med hjälp av två axlar och koordinater.")
+- [koordinat](#word "En koordinat är ett läge som anges med två tal, ett på x-axeln och ett på y-axeln.")
+- [x-axel](#word "X-axeln är den vågräta axeln i ett koordinatsystem. Den visar hur långt åt höger eller vänster något finns.")
+- [y-axel](#word "Y-axeln är den lodräta axeln i ett koordinatsystem. Den visar hur långt upp eller ner något finns.")
+- [variabel](#word "En variabel är en plats i programmet där ett värde kan sparas och ändras.")
+- [villkor](#word "Ett villkor hjälper programmet att fatta beslut. Om något stämmer gör det en sak, annars gör det något annat.")
+- [väderstreck](#word "Väderstreck används för att beskriva riktningar, till exempel norr, söder, öster och väster.")
 
 ## Material
 
@@ -50,6 +50,7 @@ koordinaterna med variablerna **x** och **y**.
 -   micro:bit
 -   Rutat papper
 -   Penna
+-   USB-sladd
 
 ## Steg 1 -- Titta på startkoden
 

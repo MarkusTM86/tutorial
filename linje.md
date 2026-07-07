@@ -62,27 +62,8 @@ Efter övningen ska du kunna:
 
 ---
 
-## Steg 1 – Starta Finch
 
-Öppna `||finch:Finch||`.
-
-Lägg till blocket **start Finch**.
-
-```blocks
-finch.startFinch()
-```
-
----
-
-## Testa
-
-Ladda ner programmet.
-
-Kontrollera att Finch ansluter.
-
----
-
-## Steg 2 – Undersök vänster linjesensor
+## Steg 1 – Undersök vänster linjesensor
 
 Öppna `||basic:Grundläggande||`.
 
@@ -115,7 +96,7 @@ Vad händer med [sensorvärdet](#word "Ett sensorvärde är ett tal som berätta
 
 ---
 
-## Steg 3 – Välj tröskelvärde @unplugged
+## Steg 2 – Välj tröskelvärde @unplugged
 
 I den här tutorialen använder vi tröskelvärdet:
 
@@ -138,7 +119,7 @@ Därför använder vi ett ganska högt tröskelvärde, **90**, så att roboten t
 
 ---
 
-## Steg 4 – Sväng bort från linjen
+## Steg 3 – Sväng bort från linjen
 
 Nu ska Finch reagera när den vänstra sensorn ser den svarta linjen.
 
@@ -167,7 +148,7 @@ Placera vänster sensor över den svarta linjen.
 
 ---
 
-## Steg 5 – Sväng tillbaka mot linjen
+## Steg 4 – Sväng tillbaka mot linjen
 
 Nu ska Finch också veta vad den ska göra när vänster sensor inte ser linjen.
 
@@ -200,7 +181,7 @@ Finch ska nu röra sig framåt genom att hela tiden småsvänga:
 
 ---
 
-## Steg 6 – Gör rörelsen mjukare
+## Steg 5 – Gör rörelsen mjukare
 
 Om Finch svänger för kraftigt kan du göra skillnaden mellan hjulen mindre.
 
@@ -253,7 +234,6 @@ Kan roboten följa hela banan?
 Diskutera tillsammans.
 
 * Hur vet Finch om den är över linjen?
-* Varför räcker det med en linjesensor i den här lösningen?
 * Vad händer när vänster hjul går snabbare än höger hjul?
 * Vad händer när höger hjul går snabbare än vänster hjul?
 * Varför behöver roboten läsa sensorn om och om igen?
