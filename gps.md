@@ -29,7 +29,7 @@ koordinaterna med variablerna **x** och **y**.
 
 ## Lärandemål
 
--   använda variabler för att lagra koordinater
+-   använda variabler för att sparaa koordinater
 -   förstå hur koordinater förändras när roboten rör sig
 -   använda villkor för att uppdatera x och y
 -   koppla robotens rörelse till matematik
@@ -66,7 +66,7 @@ displayen visar **x: 0** och **y: 0**.
 
 ## Steg 2 -- Kör framåt
 
-Lägg till `||input:när knapp A trycks||`.
+Koda att roboten ska köra framåt 5 cm i 20% hastighet. 
 
 ``` blocks
 input.onButtonPressed(Button.A, function () {
@@ -88,7 +88,7 @@ Vad visar loggan?
 
 ## Steg 3 -- Uppdatera x när Finch pekar mot öster
 
-Använd `||logic:om||` tillsammans med `||specialblock:pekar mot "Ö" ||`.
+Använd villkoret `||logic:om||` tillsammans med `||specialblock:pekar mot "Ö" ||` efter att roboten kört 5 cm framåt, och lägg där att `||variables:variabel X||` ska ändras med 5  
 
 ``` blocks
 input.onButtonPressed(Button.A, function () {
@@ -108,7 +108,7 @@ Vad visar koordinaten nu?
 
 ## Steg 4 -- Sväng vänster
 
-Lägg till `||input:när knapp B trycks||` och lägg in `||specialblock: Sväng vänster||`
+Lägg till när B trycks, ska roboten svänga vänster med blocket `||specialblock: Sväng vänster||` (viktigt för att roboten ska hålla reda på i vilken riktning roboten är vänd)
 
 ``` blocks
 input.onButtonPressed(Button.B, function () {
@@ -117,6 +117,8 @@ input.onButtonPressed(Button.B, function () {
 ```
 
 ## Steg 5 -- Uppdatera y när Finch pekar mot norr
+
+
 
 ``` blocks
 input.onButtonPressed(Button.A, function () {
