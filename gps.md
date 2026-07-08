@@ -24,7 +24,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 
 I den här övningen ska du programmera Finch att köra på ett
 koordinatsystem. Roboten håller reda på vilket väderstreck den pekar mot
-med hjälp av `||specialblock:Specialblock||`. Du ska själv hålla reda på
+med hjälp av `||specialblock:Specialblock||`. Den ska själv hålla reda på
 koordinaterna med variablerna **x** och **y**.
 
 ## Lärandemål
