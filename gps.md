@@ -88,7 +88,7 @@ Vad visar loggan?
 
 ## Steg 3 -- Uppdatera x när Finch pekar mot öster
 
-Använd villkoret `||logic:om||` tillsammans med `||specialblock:pekar mot "Ö" ||` efter att roboten kört 5 cm framåt, och lägg där att `||variables:variabel X||` ska ändras med 5  
+Använd villkoret `||logic:om||` tillsammans med `||specialblock:pekar mot "Ö" ||` efter att roboten kört 5 cm framåt, och lägg där att `||variables:variabel X||` ska ändras med 5.  
 
 ``` blocks
 input.onButtonPressed(Button.A, function () {
@@ -102,9 +102,13 @@ input.onButtonPressed(Button.A, function () {
 
 ## Testa
 
-Kör två steg.
+Kör två sträckor genom att trycka på A två gånger (andra gången när roboten stannat)
 
 Vad visar koordinaten nu?
+
+Vad innebär [det?](#word "Det betyder att programmet har uppdaterat Finchs plats på X-axeln.")
+
+Om roboten istället hade kört åt väst (vänster), skulle vi fortfarande addera X med 5?
 
 ## Steg 4 -- Sväng vänster
 
@@ -118,7 +122,7 @@ input.onButtonPressed(Button.B, function () {
 
 ## Steg 5 -- Uppdatera y när Finch pekar mot norr
 
-
+Nu ska du lägga till ett nytt villkor efter roboten kört framåt 5 cm. Villkoret ska vara: Om roboten pekar mot N (Norr/uppåt), ska **y** ändras med 5. När roboten åker rakt upp/ned, så är ändras ju positionen längs Y-axeln, och inte X-axeln.
 
 ``` blocks
 input.onButtonPressed(Button.A, function () {
@@ -144,9 +148,11 @@ Kör:
 -   A
 -   A
 
-Visa koordinaten med loggan.
+Visa koordinaten genom att trycka på loggan.
 
 ## Steg 6 -- Uppdatera x när Finch pekar mot väster
+
+Nu ska du lägga till ett tredje villkor, för vad som ska hända när roboten kört 5 cm åt väst (vänster). Ska X öka eller minska då?
 
 ``` blocks
 input.onButtonPressed(Button.A, function () {
