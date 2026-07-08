@@ -110,6 +110,8 @@ Vad innebär [det?](#word "Det betyder att programmet har uppdaterat Finchs plat
 
 Om roboten istället hade kört åt väst (vänster), skulle vi fortfarande addera X med 5?
 
+![+5](https://raw.githubusercontent.com/markustm86/tutorial/master/images/+5.png)
+
 ## Steg 4 -- Sväng vänster
 
 Lägg till när B trycks, ska roboten svänga vänster med blocket `||specialblock: Sväng vänster||` (viktigt för att roboten ska hålla reda på i vilken riktning roboten är vänd)
@@ -124,6 +126,7 @@ input.onButtonPressed(Button.B, function () {
 
 Nu ska du lägga till ett nytt villkor efter roboten kört framåt 5 cm. Villkoret ska vara: Om roboten pekar mot N (Norr/uppåt), ska **y** ändras med 5. När roboten åker rakt upp/ned, så är ändras ju positionen längs Y-axeln, och inte X-axeln.
 
+![y+5](https://raw.githubusercontent.com/markustm86/tutorial/master/images/y+5.png)
 ``` blocks
 input.onButtonPressed(Button.A, function () {
     finch.setMove(MoveDir.Forward, 5, 20)
