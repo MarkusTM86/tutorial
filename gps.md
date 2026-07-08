@@ -66,7 +66,7 @@ displayen visar **x: 0** och **y: 0**.
 
 ## Steg 2 -- Kör framåt
 
-Lägg till `||input:on button A pressed||`.
+Lägg till `||input:när knapp A trycks||`.
 
 ``` blocks
 input.onButtonPressed(Button.A, function () {
@@ -77,6 +77,8 @@ input.onButtonPressed(Button.A, function () {
 ## Testa
 
 Placera roboten på origo (i mitten av korset), vänd åt öster (höger)
+
+![origo](https://raw.githubusercontent.com/markustm86/tutorial/master/images/origo.png)
 
 Tryck på A en gång.
 
@@ -194,7 +196,7 @@ Om du vill kan du stoppa en penna i roboten och låta den rita banan på koordin
 
 ## Bonus: Låt roboten hitta hem självkörande
 
-I `||specialblock:korHem||` finns blocket  
+I `||specialblock||` finns blocket **kör hem**  
 
 ```blocks
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
