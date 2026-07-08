@@ -88,7 +88,7 @@ Vad visar loggan?
 
 ## Steg 3 -- Uppdatera x när Finch pekar mot öster
 
-Använd `||logic:if||` tillsammans med `||specialblock:pekar mot||`.
+Använd `||logic:om||` tillsammans med `||specialblock:pekar mot "Ö" ||`.
 
 ``` blocks
 input.onButtonPressed(Button.A, function () {
@@ -108,7 +108,7 @@ Vad visar koordinaten nu?
 
 ## Steg 4 -- Sväng vänster
 
-Lägg till `||input:on button B pressed||`.
+Lägg till `||input:när knapp B trycks||` och lägg in `||specialblock: Sväng vänster||`
 
 ``` blocks
 input.onButtonPressed(Button.B, function () {
