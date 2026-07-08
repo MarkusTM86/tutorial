@@ -48,13 +48,17 @@ koordinaterna med variablerna **x** och **y**.
 
 -   Finch Robot 2.0
 -   micro:bit
--   Ett koordinatsystem 
+-   Ett koordinatsystem eller ett papper/whiteboardblad att rita koordinatsystem på
 -   Penna
 -   USB-sladd
 
 
 ## Koordinatsystem @unplugged
+
+Till denna övning behöver du ett koordinatsystem. Om du inte redan ritat ett, gör det nu. Märk var 5:e cm (2 rutor på whiteboardpappret = 5 cm). Glöm inte att märka ut 0 (origo)
+
 ![Koordinatsystem](https://raw.githubusercontent.com/markustm86/tutorial/master/images/koordinatsystem.png)
+
 ## Steg 1 -- Titta på startkoden
 
 Startkoden är redan förberedd. Tryck på loggan och kontrollera att
@@ -71,6 +75,8 @@ input.onButtonPressed(Button.A, function () {
 ```
 
 ## Testa
+
+Placera roboten på origo (i mitten av korset), vänd åt öster (höger)
 
 Tryck på A en gång.
 
@@ -184,7 +190,24 @@ input.onButtonPressed(Button.A, function () {
 
 Kör Finch till koordinaten **(15,10)**.
 
-Rita banan på ett koordinatpapper.
+Om du vill kan du stoppa en penna i roboten och låta den rita banan på koordinatsystemet.
+
+## Bonus: Låt roboten hitta hem självkörande
+
+I `||specialblock:korHem||` finns blocket  
+
+```blocks
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    basic.showString("x:")
+    basic.showNumber(x)
+    basic.showString("y:")
+    basic.showNumber(y)
+    specialblock.korHem(x, y)
+    y = 0
+    x = 0
+})
+```
+
 
 ## Avslutande diskussion
 
