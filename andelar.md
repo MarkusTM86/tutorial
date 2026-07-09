@@ -11,13 +11,13 @@ let del = 1
 
 finch.startFinch()
 
-input.onButtonPressed(Button.A, function () {
+input.onButtonPressed(Button.B, function () {
     helhet += 1
     finch.setBeak(0, 0, 100)
     basic.showNumber(helhet)
 })
 
-input.onButtonPressed(Button.B, function () {
+input.onButtonPressed(Button.A, function () {
     del += 1
     finch.setBeak(0, 100, 0)
     basic.showNumber(del)
@@ -68,7 +68,7 @@ Efter övningen ska du kunna:
 - [helhet](#word "Helheten är allt tillsammans, till exempel en hel cirkel.")
 - [del](#word "En del är en bit av helheten.")
 - [vinkel](#word "En vinkel beskriver hur stor en vridning är.")
-- [cirkel](#word "En cirkel är 360 grader.")
+- [cirkel](#word "En cirkels vinkel är 360 grader.")
 
 ### Programmering
 
@@ -96,8 +96,8 @@ Knapparna fungerar redan.
 
 | Knapp | Funktion | Lampa |
 |---|---|---|
-| **A** | Ökar **helhet** | Blå näbb |
-| **B** | Ökar **del** | Grön näbb |
+| **B** | Ökar **helhet** | Blå näbb |
+| **A** | Ökar **del** | Grön näbb |
 | **A+B** | Börjar om | Vit näbb |
 
 När micro:biten visar ett tal hjälper lampan dig att se **vilken variabel** som visas.
@@ -138,7 +138,7 @@ Nämnaren berättar att helheten är delad i **2** lika stora delar.
 
 ----------
 
-## Bildstöd: del och helhet @unplugged
+## Del och helhet @unplugged
 
 Exempel:
 
@@ -165,12 +165,12 @@ Finch ska visa tre tårtbitar av en cirkel som är delad i fyra delar.
 
 ## Testa knapparna
 
-Tryck på A.
+Tryck på B.
 
 - Displayen visar **helhet**
 - Näbben lyser blå
 
-Tryck på B.
+Tryck på A.
 
 - Displayen visar **del**
 - Näbben lyser grön
@@ -185,7 +185,7 @@ del = 3
 Det betyder:
 
 
-3 / 4
+3 / 4 - Tre fjärdedelar.
 
 
 ----------

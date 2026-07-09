@@ -177,6 +177,8 @@ input.onButtonPressed(Button.A, function () {
 
 ## Steg 7 -- Uppdatera y när Finch pekar mot söder
 
+Till sist ska vi göra ett villkor för om roboten kör åt söder (neråt). Är det X eller Y som ska minska då?
+
 ``` blocks
 input.onButtonPressed(Button.A, function () {
     finch.setMove(MoveDir.Forward, 5, 20)
