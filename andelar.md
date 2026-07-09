@@ -224,7 +224,7 @@ Varför inte?
 
 ## Rita en liten cirkel
 
-Lägg till specialblocket **rita liten cirkel** i `||specialblock||` efter pausen. Testa med en penna i roboten på ett papper/whiteboard. Glöm inte att trycka på loggan.
+Lägg till specialblocket **rita liten cirkel** i `||Specialblock||` efter pausen. Testa med en penna i roboten på ett papper/whiteboard. Glöm inte att trycka på loggan.
 
 ```blocks
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
