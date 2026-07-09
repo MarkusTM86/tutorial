@@ -322,9 +322,9 @@ Fundera:
 
 ----------
 
-## Steg 4: Rita utåt
+## Steg 5: Rita utåt
 
-Nu ska Finch rita en linje ut från mitten.
+När Finch har svängt ska den rita en linje ut från mitten till kanten av cirkeln. Dit är det ca 5 cm.
 
 Lägg till blocket **kör framåt 5 cm**.
 
