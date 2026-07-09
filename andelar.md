@@ -160,6 +160,12 @@ Finch ska visa tre tårtbitar av en cirkel som är delad i fyra delar.
 
 ----------
 
+## Dags att börja programmera! @unplugged
+1. Koppla ihop er microbit med datorn 
+2. Ladda ner koden till din microbit 
+3. Stoppa in microbiten i roboten och kontrollera att koden funkar som den ska 
+
+
 ## Testa knapparna
 
 Tryck på B.
@@ -182,10 +188,6 @@ Det betyder:
 3 / 4 - Tre fjärdedelar.
 
 ----------
-## Dags att börja programmera! @unplugged
-1. Koppla ihop er microbit med datorn 
-2. Ladda ner koden till din microbit 
-3. Stoppa in microbiten i roboten och kontrollera att koden funkar som den ska 
 
 ## Steg 1: Skapa logghändelsen
 
@@ -206,9 +208,11 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 
 ## Steg 2: Lägg till en paus
 
-Lägg till en kort paus.
+Lägg till en kort paus, till exempel 200 [ms](#word "millisekunder, eller tusendelar av en sekund. 1000 ms = 1 sekund"). Då hinner du släppa roboten innan den börjar rita.
 
-Då hinner du släppa roboten innan den börjar rita.
+Hur tror du att du ska gå till väga för att lägga till en paus? Kom ihåg att du kan ta hjälp av lampan om du behöver.
+
+
 
 ```blocks
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
@@ -220,7 +224,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 
 ## Testa
 
-Tryck på loggan.
+Ladda ner koden och testa! Tryck på loggan.
 
 Händer något?
 
@@ -238,7 +242,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     specialblock.ritaLitenCirkel()
 })
 ```
-## Steg 3: Sväng en tårtbit
+## Hur kan man räkna ut en fjärdedel av cirkeln?
 
 En hel cirkel är **360 grader**.
 
@@ -247,14 +251,21 @@ Om helheten är delad i fyra delar blir varje tårtbit:
 ```text
 360 / 4 = 90°
 ```
+![gradskiva](https://raw.githubusercontent.com/markustm86/tutorial/master/images/gradskiva.png)
 
-I programmet använder vi:
+Om roboten står i mitten av cirkeln och svänger 90°, har den alltså vridit sig en fjärdedel av cirkeln.  
+
+## Steg 3: Programmera svängen
+
+Lägg till ett svängblock från `||finch||`. Där det står hur många grader Finch ska svänga lägger vi in matematikblocket `||math:0/0||`(0 dividerat med 0)
+
+I programmet använder vi 
+
 
 ```text
 360 / helhet
 ```
 
-Lägg till ett svängblock.
 
 ```blocks
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
