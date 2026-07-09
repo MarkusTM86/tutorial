@@ -90,17 +90,14 @@ Efter övningen ska du kunna:
 
 ## Programmet är redan förberett @showdialog
 
-Variablerna finns redan i programmet.
+I koden nedan finns variablerna redan skapade, och knapparnas funktioner är redan programmerade. 
 
-Knapparna fungerar redan.
+- När du trycker på **B** ökar variabeln helhet, och den blå näbben lyser för att visa att det är helhet som visas.  
+- När du trycker på **A** ökar variabeln del, och den gröna näbben visar att det är del som visas.  
 
-| Knapp | Funktion | Lampa |
-|---|---|---|
-| **B** | Ökar **helhet** | Blå näbb |
-| **A** | Ökar **del** | Grön näbb |
-| **A+B** | Börjar om | Vit näbb |
+Om du trycker på **A+B** samtidigt börjar programmet om, och den vita näbben lyser.  
 
-När micro:biten visar ett tal hjälper lampan dig att se **vilken variabel** som visas.
+Varje gång micro:biten visar ett tal hjälper lampans färg dig att se vilken variabel som visas. 
 
 ----------
 
@@ -177,24 +174,24 @@ Tryck på A.
 
 Ställ sedan in:
 
-```text
-helhet = 4
-del = 3
-```
+- helhet = 4
+- del = 3
 
 Det betyder:
 
-
 3 / 4 - Tre fjärdedelar.
 
-
 ----------
+## Dags att börja programmera! @unplugged
+1. Koppla ihop er microbit med datorn 
+2. Ladda ner koden till din microbit 
+3. Stoppa in microbiten i roboten och kontrollera att koden funkar som den ska 
 
 ## Steg 1: Skapa logghändelsen
 
 Öppna kategorin `||input:input||`.
 
-Lägg till blocket **Vid nedtryckt på logotyp**. 
+Lägg till blocket **Vid nedtryckt på logotyp**. Det är den ovala symbolen längst upp på microbit och fungerar som en knapp.
 
 ![logo](https://raw.githubusercontent.com/markustm86/tutorial/master/images/microbit-logo.png)
 
