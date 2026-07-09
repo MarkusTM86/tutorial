@@ -193,7 +193,7 @@ Det betyder:
 
 Öppna kategorin `||input:input||`.
 
-Lägg till blocket **Vid nedtryckt på logotyp**. Det är den ovala symbolen längst upp på microbit och fungerar som en knapp.
+Lägg till blocket **Vid nedtryckt på logotyp**. Logotypen/loggan är den ovala symbolen längst upp på microbit och fungerar som en knapp.
 
 ![logo](https://raw.githubusercontent.com/markustm86/tutorial/master/images/microbit-logo.png)
 
@@ -234,7 +234,7 @@ Varför inte?
 
 ## Rita en liten cirkel
 
-Lägg till specialblocket **rita liten cirkel** i `||specialblock||` Testa på ett papper/whiteboard.
+Lägg till specialblocket **rita liten cirkel** i `||specialblock||` efter pausen. Testa med en penna i roboten på ett papper/whiteboard. Glöm inte att trycka på loggan.
 
 ```blocks
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
@@ -257,10 +257,28 @@ Om roboten står i mitten av cirkeln och svänger 90°, har den alltså vridit s
 
 ## Steg 3: Programmera svängen
 
-Lägg till ett svängblock från `||finch||`. Där det står hur många grader Finch ska svänga lägger vi in matematikblocket `||math:0/0||`(0 dividerat med 0)
+Lägg till ett svängblock från `||finch||`. Där det står hur många grader Finch ska svänga lägger vi in matematikblocket `||math:0/0||`. Ändra till 360/4 (360 dividerat med 4).  
 
-I programmet använder vi 
+Hur många grader kommer roboten att svänga efter att den ritat cirkeln och ställt sig i mitten igen? Ladda ner koden och testa!
 
+
+```blocks
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    basic.pause(200)
+    specialblock.ritaLitenCirkel()
+    finch.setTurn(RLDir.Right, 360 / 4, 10)
+})
+```
+
+----------
+
+## Steg 4: Använd variabel
+
+Nu har vi programmerat roboten att svänga 1/4 varv. Men vi vill att den kan svänga olika mycket, utan att behöva ladda upp ny kod varje gång. 
+
+Därför ska vi använda **variabeln** `||variables:helhet||`. Det är den som ändras varje gång vi trycker på **B**. Till exempel från **3** (tredjedelar) till **4** (fjärdedelar).
+
+Lägg `||variables:helhet||`istället för /4, så att det i matematikblocket står:
 
 ```text
 360 / helhet
@@ -275,15 +293,14 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 })
 ```
 
-----------
-
 ## Testa
 
-Prova:
+Ladda ned koden och prova att ändra **helhet** genom att trycka på **B**:
 
 ```text
 helhet = 2
 ```
+Tryck på loggan och se hur mycket roboten svänger.
 
 sedan:
 
