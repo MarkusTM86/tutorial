@@ -322,36 +322,12 @@ Fundera:
 
 ----------
 
-## Steg 5: Rita utåt
+## Steg 5: Rita tårtbit
 
 När Finch har svängt ska den rita en linje ut från mitten till kanten av cirkeln. Dit är det ca 5 cm.
+Sedan ska roboten backa in i mitten igen. 
 
-Lägg till blocket **kör framåt 5 cm**.
-
-```blocks
-input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    basic.pause(200)
-    specialblock.ritaLitenCirkel()
-    finch.setTurn(RLDir.Right, 360 / helhet, 10)
-    finch.setMove(MoveDir.Forward, 5, 10)
-})
-```
-
-----------
-
-## Testa
-
-Vad ritar Finch?
-
-Ser du en sida av en tårtbit?
-
-----------
-
-## Steg 5: Kör tillbaka
-
-För att kunna rita nästa tårtbit behöver Finch köra tillbaka till mitten.
-
-Lägg till blocket **kör bakåt 5 cm**.
+Tryck på lampan om ni behöver hjälp. 
 
 ```blocks
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
@@ -362,7 +338,6 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     finch.setMove(MoveDir.Backward, 5, 10)
 })
 ```
-
 ----------
 
 ## Testa
@@ -388,7 +363,7 @@ Programmet fungerar.
 
 Men det ritar bara **en** tårtbit.
 
-Hur skulle du göra om du ville rita tre tårtbitar?
+Hur skulle du göra om du ville rita fler tårtbitar? Till exempel **3**/6?
 
 Skulle du kopiera samma kod tre gånger?
 
@@ -398,11 +373,11 @@ Eller finns det ett smartare sätt?
 
 ## Steg 6: Upprepa med en loop
 
-Öppna kategorin `||loops:Loopar||`.
+Öppna kategorin `||loops:Upprepa 4 gånger gör||`.
 
 Lägg en **upprepa**-loop runt rörelserna.
 
-Loopen ska upprepas **del** gånger.
+Loopen ska upprepas `||variables:del||` gånger, alltså så många tårtbitar du väljer att den ska rita med knappen **A**.
 
 ```blocks
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
