@@ -105,23 +105,17 @@ Varje gång micro:biten visar ett tal hjälper lampans färg dig att se vilken v
 
 Tänk dig bråket:
 
-```text
 1 / 2
-```
 
 Här är:
 
-```text
 1 = del
 2 = helhet
-```
 
 Eller med matematikord:
 
-```text
 1 = täljare
 2 = nämnare
-```
 
 Vi kan skriva det så här:
 
@@ -145,16 +139,12 @@ Exempel:
 
 betyder:
 
-```text
 del = 3
 helhet = 4
-```
 
 Alltså:
 
-```text
 3 av 4 delar
-```
 
 Finch ska visa tre tårtbitar av en cirkel som är delad i fyra delar.
 
@@ -248,9 +238,8 @@ En hel cirkel är **360 grader**.
 
 Om helheten är delad i fyra delar blir varje tårtbit:
 
-```text
 360 / 4 = 90°
-```
+
 ![gradskiva](https://raw.githubusercontent.com/markustm86/tutorial/master/images/gradskiva.png)
 
 Om roboten står i mitten av cirkeln och svänger 90°, har den alltså vridit sig en fjärdedel av cirkeln.  
@@ -280,9 +269,8 @@ Därför ska vi använda **variabeln** `||variables:helhet||`. Det är den som �
 
 Lägg `||variables:helhet||`istället för /4, så att det i matematikblocket står:
 
-```text
 360 / helhet
-```
+
 
 
 ```blocks
@@ -297,22 +285,17 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 
 Ladda ned koden och prova att ändra **helhet** genom att trycka på **B**:
 
-```text
 helhet = 2
-```
+
 Tryck på loggan och se hur mycket roboten svänger.
 
 sedan:
 
-```text
 helhet = 4
-```
 
 sedan:
 
-```text
 helhet = 8
-```
 
 Fundera:
 
@@ -346,9 +329,7 @@ Nu ritar Finch en tårtbit.
 
 Prova:
 
-```text
-helhet = 6
-```
+- helhet = 6
 
 Fundera:
 
