@@ -192,9 +192,12 @@ Det betyder:
 
 ## Steg 1: Skapa logghändelsen
 
-Öppna kategorin `||input:Indata||`.
+Öppna kategorin `||input:input||`.
 
-Lägg till blocket **när loggan trycks**.
+Lägg till blocket **Vid nedtryckt på logotyp**. 
+
+![logo](https://raw.githubusercontent.com/markustm86/tutorial/master/images/microbit-logo.png)
+
 
 ```blocks
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
