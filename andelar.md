@@ -373,11 +373,9 @@ Eller finns det ett smartare sätt?
 
 ## Steg 6: Upprepa med en loop
 
-Öppna kategorin `||loops:Upprepa 4 gånger gör||`.
+Lägg loopen `||loops:Upprepa 4 gånger gör||` runt rörelserna.
 
-Lägg en **upprepa**-loop runt rörelserna.
-
-Loopen ska upprepas `||variables:del||` gånger, alltså så många tårtbitar du väljer att den ska rita med knappen **A**.
+Istället för 4 gånger, ska loopen upprepas `||variables:del||` gånger, alltså så många tårtbitar du väljer att den ska rita med knappen **A**.
 
 ```blocks
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
