@@ -353,11 +353,10 @@ Nu har du tränat på att:
 
 ## Bonus – Så här kan du utmana dig
 
-Kan du skapa en knapp som minskar hastigheten med 10?
+Kan du lägga till en knapp som minskar hastigheten med 10? 
 
 Hur kan du se till att hastigheten aldrig blir mindre än 0 eller större än 100?
 
-~hint Behöver du en ledtråd?
 
 Tänk efter innan du fortsätter.
 
@@ -391,5 +390,3 @@ input.onButtonPressed(Button.B, function () {
 
 På så sätt hålls hastigheten mellan **0 %** och **100 %**.
 
-hint~
-````
