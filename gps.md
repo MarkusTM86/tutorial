@@ -62,11 +62,14 @@ Till denna övning behöver du ett koordinatsystem. Om du inte redan ritat ett, 
 
 ## Steg 1 -- Titta på startkoden
 
-Startkoden är redan förberedd. Ladda ned befintlig kod och starta finch roboten. Tryck sedan på loggan (med bild) på microbiten och kontrollera att displayen visar x:0 och y:0. "
+Startkoden är redan förberedd. Ladda ned befintlig kod och starta finch roboten. Tryck sedan på loggan (se bild när du trycker på lampan) på microbiten och kontrollera att displayen visar x:0 och y:0. "
 -  texten som står på slide 8 borde stå på slide 6 också tillsammans med att man ska kontrollera att displayn funkar
+
+![logo](https://raw.githubusercontent.com/markustm86/tutorial/master/images/microbit-logo.png)
+
 ## Steg 2 -- Kör framåt
 
-Koda att roboten ska köra framåt 5 cm i 20% hastighet. 
+Koda roboten att köra 5 cm framåt i 20% hastighet om man trycker på knapp A "
 
 ``` blocks
 input.onButtonPressed(Button.A, function () {
@@ -84,11 +87,17 @@ Tryck på A en gång.
 
 Hur långt kör roboten?
 
-Vad visar loggan?
+Tryck på loggan.
+
+Vad visar skärmen på microbit?
 
 ## Steg 3 -- Uppdatera x när Finch pekar mot öster
 
-Använd villkoret `||logic:om||` tillsammans med `||specialblock:pekar mot "Ö" ||` efter att roboten kört 5 cm framåt, och lägg där att `||variables:variabel X||` ska ändras med 5.  
+Lägg in villkoret `||logic:om sant||` efter att roboten kört 5 cm framåt.
+
+Lägg in specialblocket `||specialblock:pekar mot "Ö" ||` (öster) i "hålet" där det står *sant*
+
+Inne i villkoret **om pekar mot Ö** - skriv att variabeln **x** ska öka med +5, med hjälp  `||variables:ändra x med (  )||` (du kan ändra mellan variablerna *x* och *y* genom klicka på rutan där det står x eller y)
 
 ``` blocks
 input.onButtonPressed(Button.A, function () {
