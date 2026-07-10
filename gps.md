@@ -23,25 +23,26 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 ## Kort introduktion
 
 I den här övningen ska du programmera Finch att köra på ett
-koordinatsystem. Roboten håller reda på vilket väderstreck den pekar mot
-med hjälp av `||specialblock:Specialblock||`. Den ska själv hålla reda på
+koordinatsystem. Vi ska programmera den att hålla reda på vilket väderstreck den pekar mot
+med hjälp av `||specialblock:Specialblock||`. Den ska också programmeras att hela tiden hålla reda på
 koordinaterna med variablerna **x** och **y**.
 
 ## Lärandemål
 
--   använda variabler för att sparaa koordinater
--   förstå hur koordinater förändras när roboten rör sig
--   använda villkor för att uppdatera x och y
--   koppla robotens rörelse till matematik
+- Använda variabler för att lagra robotens position (x och y).
+- Uppdatera koordinater utifrån robotens riktning och rörelse.
+- Använda villkor för att ändra x och y beroende på väderstreck.
+- Programmera roboten att navigera till en bestämd koordinat.
+- Förstå sambandet mellan programmering, koordinatsystem och robotens rörelser.
 
 ## Begrepp
 
-- [koordinatsystem](#word "Ett koordinatsystem hjälper oss att beskriva en plats med hjälp av två axlar och koordinater.")
-- [koordinat](#word "En koordinat är ett läge som anges med två tal, ett på x-axeln och ett på y-axeln.")
+- [koordinatsystem](#word "Ett rutnät med linjer där man kan visa exakt vart något befinner sig. ")
+- [koordinat](#word "En koordinat är en punkt på koordinatsystemets rutnät som anges med två tal, ett på x-axeln som beskriver hur långt en punkt befinner sig till höger eller vänster och ett tal på y-axeln som beksriver hur högt punkten befinner sig uppåt och nedåt. ")
 - [x-axel](#word "X-axeln är den vågräta axeln i ett koordinatsystem. Den visar hur långt åt höger eller vänster något finns.")
 - [y-axel](#word "Y-axeln är den lodräta axeln i ett koordinatsystem. Den visar hur långt upp eller ner något finns.")
 - [variabel](#word "En variabel är en plats i programmet där ett värde kan sparas och ändras.")
-- [villkor](#word "Ett villkor hjälper programmet att fatta beslut. Om något stämmer gör det en sak, annars gör det något annat.")
+- [villkor](#word "Ett villkor är en regel som måste vara sann för att något ska hända. Om något stämmer gör programmet en sak, annars gör den något annat")
 - [väderstreck](#word "Väderstreck används för att beskriva riktningar, till exempel norr, söder, öster och väster.")
 
 ## Material
@@ -61,9 +62,8 @@ Till denna övning behöver du ett koordinatsystem. Om du inte redan ritat ett, 
 
 ## Steg 1 -- Titta på startkoden
 
-Startkoden är redan förberedd. Tryck på loggan och kontrollera att
-displayen visar **x: 0** och **y: 0**.
-
+Startkoden är redan förberedd. Ladda ned befintlig kod och starta finch roboten. Tryck sedan på loggan (med bild) på microbiten och kontrollera att displayen visar x:0 och y:0. "
+-  texten som står på slide 8 borde stå på slide 6 också tillsammans med att man ska kontrollera att displayn funkar
 ## Steg 2 -- Kör framåt
 
 Koda att roboten ska köra framåt 5 cm i 20% hastighet. 
