@@ -16,7 +16,6 @@ Du börjar med att arbeta med micro:biten. När du har förstått hur variabler 
 
 Efter övningen ska du kunna:
 
-- förklara vad en variabel är
 - skapa och ändra variabler
 - använda en variabel i ett program
 - använda en variabel för att styra Finch
@@ -30,7 +29,7 @@ Efter övningen ska du kunna:
 - [variabel](#word "En variabel är en plats i programmet där ett värde kan sparas och ändras.")
 - [värde](#word "Ett värde är information som sparas i en variabel.")
 - [händelse](#word "En händelse är något som startar kod, till exempel när micro:biten skakas eller när en knapp trycks ned.")
-- [villkor](#word "Ett villkor är en kontroll som gör att programmet kan välja vad som ska hända.")
+- [villkor](#word "(Ett villkor hjälper roboten att fatta beslut. Om något stämmer gör den en sak, annars gör den något annat.")
 
 **Matematik**
 
@@ -57,7 +56,7 @@ Ge variabeln namnet **steg**.
 
 När du har skapat variabeln får den automatiskt startvärdet **0**.
 
-Programmet ska nu se ut så här.
+Tryck på lampan för att se hur koden kommer att se ut.
 
 ```blocks
 let steg = 0
@@ -77,13 +76,10 @@ Fundera.
 
 ## Steg 2: Visa variabelns värde
 
-Öppna kategorin `||basic:Grundläggande||`.
+Välj blocket `||basic:visa siffra||`.
 
-Välj blocket **visa siffra**.
+Öppna sedan `||variables:variabler||` och dra in det ovala blocket **steg** i **visa siffra**
 
-Öppna sedan `||variables:Variabler||` och dra in variabeln **steg** i blocket.
-
-Programmet ska se ut så här.
 
 ```blocks
 let steg = 0
@@ -106,7 +102,7 @@ Varför visas just det talet?
 
 Nu ska du använda en ny händelse.
 
-Öppna kategorin `||input:Indata||`.
+Öppna kategorin Input  `||input:när skaka||`.
 
 Välj blocket **vid skakning**.
 
