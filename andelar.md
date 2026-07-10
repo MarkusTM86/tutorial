@@ -104,6 +104,10 @@ Om du trycker på **A+B** samtidigt börjar programmet om, och den vita näbben 
 
 Varje gång micro:biten visar ett tal hjälper lampans färg dig att se vilken variabel som visas. 
 
+Tips: För att komma ihåg vad knapparna gör, kan du skriva med whiteboardpenna på finch. Det går att sudda bort. Klicka på lampan för att se bild.
+
+![ritadfinch](https://raw.githubusercontent.com/markustm86/tutorial/master/images/ritadfinch.png)
+
 ----------
 
 ## Förstå bråket @unplugged
