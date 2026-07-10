@@ -221,6 +221,8 @@ I `||specialblock:specialblock||` finns blocket **kör hem**. Här kan du lägga
 
 Om du lägger in **kör hem från x, y** sist i koden för **vid nedtryckt på logotyp**, kommer roboten att kunna hitta tillbaka till origo efter att ha visat koordinaterna. 
 
+Lägg också till att, när roboten kört hem, ska variablerna *x* och *y* sättas till 0. Nu är ju roboten till baka i x:0, y:0 (i origo)
+
 ```blocks
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     basic.showString("x:")

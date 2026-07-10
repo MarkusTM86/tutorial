@@ -152,5 +152,6 @@ namespace specialblock {
 
         // Avsluta med att peka mot öster
         vridTillRiktning(KoordinatRiktning.Oster)
+
     }
 }
