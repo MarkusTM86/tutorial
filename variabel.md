@@ -34,7 +34,7 @@ Efter övningen ska du kunna:
 **Matematik**
 
 - [hastighet](#word "Hastighet beskriver hur snabbt något rör sig.")
-- [tid](#word "Tid beskriver hur länge något pågår.")
+- [ms](#word "Kort för millisekunder, eller tusendels sekunder. 1000 ms = 1 sekund")
 
 ---
 
@@ -244,9 +244,9 @@ input.onButtonPressed(Button.A, function () {
 
 Nu ska vi välja vad som ska hända när **knapp B** trycks (försök lista ut hur)
 
-När knapp B trycks ska roboten börja köra med hjälp blocket ``||finch:Finch wheels L||.``
+När knapp B trycks ska roboten börja köra med hjälp blocket `||finch:Finch wheels L 0% R 0%||`, som bestämmer hur snabbt båda hjulen ska snurra.
 
-Använd variabeln **hastighet** som hastighet för båda hjulen.
+Vi vill kunna köra olika snabbt, beroende på vilken hastighet man väljer. Därför ska variabeln `||variables:hastighet||` stå som hastighet för båda hjulen.
 
 
 ```blocks
@@ -283,17 +283,12 @@ Fundera.
 
 Nu ska Finch bara köra en kort stund.
 
-Öppna `||basic:Grundläggande||`.
+Lägg in en `||basic:pausa (ms)||` efter att hjulen startat. 
 
-Lägg till blocket **paus (ms)** efter att hjulen har startat.
+Sätt pausen till **2000 ms**. Det är lika mycket som 2 sekunder.
 
-Sätt pausen till **2000 ms**.
+Lägg sedan till blocket `||finch:Finch stop||` efter pausen.
 
-2000 ms betyder 2 sekunder.
-
-Lägg sedan till Finch-blocket **finch stop**.
-
-Programmet ska nu se ut så här.
 
 ```blocks
 let hastighet = 0
@@ -320,13 +315,6 @@ input.onButtonPressed(Button.B, function () {
 2. Tryck på knapp B.
 3. Titta på hur Finch kör och stannar.
 
-Fundera.
-
-- Kör Finch lika länge varje gång?
-- Vad är det som förändras när du trycker på A?
-- Vad är det som inte förändras?
-
----
 
 ## Avslutande test
 
@@ -334,7 +322,7 @@ Visa att du kan:
 
 - skapa en variabel
 - ändra värdet i en variabel
-- visa en variabel på displayen
+- visa en variabel på en skärm
 - använda en variabel för att styra Finch
 - köra Finch under en bestämd tid
 
@@ -345,7 +333,6 @@ Visa att du kan:
 Diskutera tillsammans.
 
 - Vad är en variabel?
-- Vad är skillnaden mellan variablerna **steg** och **hastighet**?
 - Varför är det smartare att använda en variabel än att skriva in ett nytt tal varje gång?
 - Hur hjälpte variabeln Finch att köra olika snabbt?
 - Varför kan det vara användbart att köra roboten under samma tid varje gång?
