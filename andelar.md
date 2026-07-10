@@ -30,10 +30,6 @@ input.onButtonPressed(Button.AB, function () {
     basic.showNumber(1)
 })
 
-input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    basic.pause(200)
-    specialblock.ritaLitenCirkel()
-})
 ```
 
 ## Kort introduktion
