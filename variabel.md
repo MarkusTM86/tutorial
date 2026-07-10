@@ -102,17 +102,12 @@ Varför visas just det talet?
 
 Nu ska du använda en ny händelse.
 
-Öppna kategorin Input  `||input:när skaka||`.
+Öppna kategorin Input och välj `||input:när skaka||`.
 
-Välj blocket **vid skakning**.
+Lägg in `||variables:ändra steg med 1||` i **när skaka**. 
 
-Öppna sedan `||variables:Variabler||`.
+Flytta sedan blocket **visa steg** från start till **när skaka**
 
-Välj blocket **ändra steg med 1**.
-
-Lägg till blocket **visa tal** från `||basic:Grundläggande||`.
-
-Programmet ska nu se ut så här.
 
 ```blocks
 let steg = 0
@@ -133,67 +128,46 @@ Fundera.
 
 - Vad händer varje gång du skakar?
 - Hur förändras variabeln?
-- Vad visas på displayen?
+
+## Stegräknare
+
+Nu har du gjort en stegräknare. Tänk att du har microbit i fickan, och varje gång du tar ett steg skakas den lite, och ett steg adderas. När du vill kan du ta upp microbit och titta hur många steg du tagit hittills. 
+
+Det är en bra sak med variabler. De kan man använda för något som *ändras* hela tiden. 
 
 ---
+
+## Ta bort koden
+
+Släng all kod förutom **vid start**, genom att dra den till vänster och släpp den där alla kodblocken finns. 
 
 ## Steg 4: Skapa en ny variabel
 
 Nu ska du skapa en ny variabel.
 
-Öppna `||variables:Variabler||`.
-
-Välj **Skapa en variabel...**
-
-Ge den namnet **hastighet**.
+Skapa en `||variables:variabel||` och ge den namnet "hastighet"
 
 Ge variabeln startvärdet **0**.
 
-Programmet ska nu se ut så här.
-
 ```blocks
 let hastighet = 0
-let steg = 0
 
-input.onGesture(Gesture.Shake, function () {
-    steg += 1
-    basic.showNumber(steg)
-})
 ```
-
----
-
-## Testa @unplugged
-
-Fundera.
-
-- Vad används variabeln **steg** till?
-- Vad tror du att variabeln **hastighet** kommer att användas till?
 
 ---
 
 ## Steg 5: Visa hastigheten
 
-Öppna kategorin `||input:Indata||`.
+Hämta `||input:när knapp A trycks||`.
 
-Lägg till blocket **när knapp A trycks**.
+Lägg in `||input:visa siffra||` i *när knapp A trycks*.
 
-Öppna `||basic:Grundläggande||`.
+Lägg in variabeln `||variables:hastighet||` i *visa siffra*
 
-Lägg in blocket **visa tal**.
-
-Öppna sedan `||variables:Variabler||` och välj variabeln **hastighet**.
-
-Programmet ska nu se ut så här.
+Titta på lampan för att se om du gjort rätt.
 
 ```blocks
 let hastighet = 0
-let steg = 0
-
-input.onGesture(Gesture.Shake, function () {
-    steg += 1
-    basic.showNumber(steg)
-})
 
 input.onButtonPressed(Button.A, function () {
     basic.showNumber(hastighet)
@@ -214,26 +188,17 @@ Vad berättar talet?
 
 ## Steg 6: Ändra hastigheten
 
-Nu ska knapp A inte bara visa hastigheten. Den ska också öka hastigheten.
+Nu ska knapp A inte bara *visa* hastigheten. Den ska också *öka* hastigheten.
 
-Öppna `||variables:Variabler||`.
-
-Välj blocket **ändra hastighet med 1**.
+Öppna `||variables:ändra hastighet med 1||`.
 
 Ändra värdet från **1** till **10**.
 
-Visa sedan hastigheten på displayen.
+Lägg det innan *visa hastighet*, när man trycker på knapp A. 
 
-Programmet ska nu se ut så här.
 
 ```blocks
 let hastighet = 0
-let steg = 0
-
-input.onGesture(Gesture.Shake, function () {
-    steg += 1
-    basic.showNumber(steg)
-})
 
 input.onButtonPressed(Button.A, function () {
     hastighet += 10
@@ -250,18 +215,17 @@ Tryck flera gånger på knapp A.
 Fundera.
 
 - Hur förändras hastigheten?
-- Vilket värde visas på displayen?
-- Varför börjar hastigheten på 0?
+- Vilket värde visas på microbit?
 
 ---
 
 ## Steg 7: Nu är det dags att använda Finch
 
-Hittills har du bara arbetat med micro:biten.
+Hittills har du bara arbetat med microbiten.
 
 Nu ska Finch använda variabeln **hastighet**.
 
-Lägg först till blocket som startar Finch.
+Lägg först till blocket `||finch:start Finch||` under `||basic:vid start||`
 
 ```blocks
 let hastighet = 0
@@ -276,25 +240,14 @@ input.onButtonPressed(Button.A, function () {
 
 ---
 
-## Testa @unplugged
-
-Programmet gör ännu ingenting med roboten.
-
-Varför tror du att Finch måste startas innan den kan köra?
-
----
-
 ## Steg 8: Låt variabeln styra hjulen
 
-Öppna kategorin `||input:Indata||`.
+Nu ska vi välja vad som ska hända när **knapp B** trycks (försök lista ut hur)
 
-Lägg till blocket **när knapp B trycks**.
-
-Lägg sedan till Finch-blocket **startMotors**.
+När knapp B trycks ska roboten börja köra med hjälp blocket ``||finch:Finch wheels L||.``
 
 Använd variabeln **hastighet** som hastighet för båda hjulen.
 
-Programmet ska nu se ut så här.
 
 ```blocks
 let hastighet = 0
