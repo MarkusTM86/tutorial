@@ -24,8 +24,8 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 
 I den här övningen ska du programmera Finch att köra på ett
 koordinatsystem. Vi ska programmera den att hålla reda på vilket väderstreck den pekar mot
-med hjälp av `||specialblock:Specialblock||`. Den ska också programmeras att hela tiden hålla reda på
-koordinaterna med variablerna **x** och **y**.
+med hjälp av `||specialblock:Specialblock||`. Den ska också programmeras att hela tiden hålla reda på sin position med hjälp av
+variablerna **x** och **y**.
 
 ## Lärandemål
 
@@ -217,7 +217,9 @@ Om du vill kan du stoppa en penna i roboten och låta den rita banan på koordin
 
 ## Bonus: Låt roboten hitta hem självkörande
 
-I `||specialblock||` finns blocket **kör hem**  
+I `||specialblock:specialblock||` finns blocket **kör hem**. Här kan du lägga in variablerna `||specialblock:x och y||`. 
+
+Om du lägger in **kör hem från x, y** sist i koden för **vid nedtryckt på logotyp**, kommer roboten att kunna hitta tillbaka till origo efter att ha visat koordinaterna. 
 
 ```blocks
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
