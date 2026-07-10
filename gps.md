@@ -53,7 +53,6 @@ koordinaterna med variablerna **x** och **y**.
 -   Penna
 -   USB-sladd
 
-
 ## Koordinatsystem @unplugged
 
 Till denna övning behöver du ett koordinatsystem. Om du inte redan ritat ett, gör det nu. Märk var 5:e cm (2 rutor på whiteboardpappret = 5 cm). Glöm inte att märka ut 0 (origo)
@@ -63,7 +62,7 @@ Till denna övning behöver du ett koordinatsystem. Om du inte redan ritat ett, 
 ## Steg 1 -- Titta på startkoden
 
 Startkoden är redan förberedd. Ladda ned befintlig kod och starta finch roboten. Tryck sedan på loggan (se bild när du trycker på lampan) på microbiten och kontrollera att displayen visar x:0 och y:0. "
--  texten som står på slide 8 borde stå på slide 6 också tillsammans med att man ska kontrollera att displayn funkar
+
 
 ![logo](https://raw.githubusercontent.com/markustm86/tutorial/master/images/microbit-logo.png)
 
