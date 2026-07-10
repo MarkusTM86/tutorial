@@ -29,6 +29,11 @@ input.onButtonPressed(Button.AB, function () {
     finch.setBeak(100, 100, 100)
     basic.showNumber(1)
 })
+
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    basic.pause(200)
+    specialblock.ritaLitenCirkel()
+})
 ```
 
 ## Kort introduktion
@@ -224,7 +229,7 @@ Varför inte?
 
 ## Rita en liten cirkel
 
-Lägg till specialblocket **rita liten cirkel** i `||Specialblock||` efter pausen. Testa med en penna i roboten på ett papper/whiteboard. Glöm inte att trycka på loggan.
+Lägg till specialblocket `||Specialblock:rita liten cirkel||` efter pausen. Testa med en penna i roboten på ett papper/whiteboard. Glöm inte att trycka på loggan.
 
 ```blocks
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
@@ -238,7 +243,7 @@ En hel cirkel är **360 grader**.
 
 Om helheten är delad i fyra delar blir varje tårtbit:
 
-360 / 4 = 90°
+**360 / 4 = 90°**
 
 ![gradskiva](https://raw.githubusercontent.com/markustm86/tutorial/master/images/gradskiva.png)
 
@@ -246,7 +251,7 @@ Om roboten står i mitten av cirkeln och svänger 90°, har den alltså vridit s
 
 ## Steg 3: Programmera svängen
 
-Lägg till ett svängblock från `||finch||`. Där det står hur många grader Finch ska svänga lägger vi in matematikblocket `||math:0/0||`. Ändra till 360/4 (360 dividerat med 4).  
+Lägg till ett svängblock från `||finch:finch||`. Där det står hur många grader Finch ska svänga lägger vi in matematikblocket `||math:0/0||`. Ändra till **360/4** (360 dividerat med 4).  
 
 Hur många grader kommer roboten att svänga efter att den ritat cirkeln och ställt sig i mitten igen? Ladda ner koden och testa!
 
