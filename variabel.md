@@ -106,7 +106,7 @@ Nu ska du använda en ny händelse.
 
 Lägg in `||variables:ändra steg med 1||` i **när skaka**. 
 
-Flytta sedan blocket **visa steg** från start till **när skaka**
+Flytta sedan blocket **visa siffra: steg** från start till **när skaka**
 
 
 ```blocks
@@ -160,7 +160,7 @@ let hastighet = 0
 
 Hämta `||input:när knapp A trycks||`.
 
-Lägg in `||input:visa siffra||` i *när knapp A trycks*.
+Lägg in `||basic:visa siffra||` i *när knapp A trycks*.
 
 Lägg in variabeln `||variables:hastighet||` i *visa siffra*
 
