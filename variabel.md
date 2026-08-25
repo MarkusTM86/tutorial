@@ -54,7 +54,9 @@ Välj **Skapa en variabel...**
 
 Ge variabeln namnet **steg**.
 
-När du har skapat variabeln får den automatiskt startvärdet **0**.
+Välj blocket `||variables:sätt steg till 0||`. Lägg in blocket under **vid start**.
+
+Det betyder att variabeln du skapat automatiskt får startvärdet **0**.
 
 Tryck på lampan för att se hur koden kommer att se ut.
 
@@ -83,7 +85,9 @@ Välj blocket `||basic:visa siffra||`.
 
 ```blocks
 let steg = 0
+steg = 0
 basic.showNumber(steg)
+
 ```
 
 ---
@@ -111,7 +115,7 @@ Flytta sedan blocket **visa siffra: steg** från start till **när skaka**
 
 ```blocks
 let steg = 0
-
+steg = 0 
 input.onGesture(Gesture.Shake, function () {
     steg += 1
     basic.showNumber(steg)
@@ -168,7 +172,7 @@ Titta på lampan för att se om du gjort rätt.
 
 ```blocks
 let hastighet = 0
-
+hastighet = 0
 input.onButtonPressed(Button.A, function () {
     basic.showNumber(hastighet)
 })
@@ -199,7 +203,7 @@ Lägg det innan *visa hastighet*, när man trycker på knapp A.
 
 ```blocks
 let hastighet = 0
-
+hastighet = 0
 input.onButtonPressed(Button.A, function () {
     hastighet += 10
     basic.showNumber(hastighet)
@@ -229,7 +233,7 @@ Lägg först till blocket `||finch:start Finch||` under `||basic:vid start||`
 
 ```blocks
 let hastighet = 0
-
+hastighet = 0
 finch.startFinch()
 
 input.onButtonPressed(Button.A, function () {
@@ -251,7 +255,7 @@ Vi vill kunna köra olika snabbt, beroende på vilken hastighet man väljer. Dä
 
 ```blocks
 let hastighet = 0
-
+hastighet = 0
 finch.startFinch()
 
 input.onButtonPressed(Button.A, function () {
@@ -292,7 +296,7 @@ Lägg sedan till blocket `||finch:Finch stop||` efter pausen.
 
 ```blocks
 let hastighet = 0
-
+hastighet = 0
 finch.startFinch()
 
 input.onButtonPressed(Button.A, function () {
